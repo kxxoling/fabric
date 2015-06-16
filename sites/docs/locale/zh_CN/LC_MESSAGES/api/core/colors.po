@@ -1,0 +1,50 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-16 16:34+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../api/core/colors.rst:3
+msgid "Color output functions"
+msgstr "提供彩色输出的函数"
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/colors.pydocstring
+#: of fabric.colors:3
+msgid "Functions for wrapping strings in ANSI color codes."
+msgstr "封装字符串，提供 ANSI 色彩输出的函数。"
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/colors.pydocstring
+#: of fabric.colors:5
+msgid ""
+"Each function within this module returns the input string ``text``, wrapped "
+"with ANSI color codes for the appropriate color."
+msgstr ""
+"本模块中的所有函数均返回包裹对应色彩 ANSI 字符的 ``text`` 字符串。"
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/colors.pydocstring
+#: of fabric.colors:8
+msgid "For example, to print some text as green on supporting terminals::"
+msgstr "例如，在支持 ANSI 的终端中打印绿色文字： ::"
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/colors.pydocstring
+#: of fabric.colors:14
+msgid ""
+"Because these functions simply return modified strings, you can nest them::"
+msgstr "这些函数返回值都是修改后的字符串，因此你也可以嵌套使用它们： ::"
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/colors.pydocstring
+#: of fabric.colors:20
+msgid ""
+"If ``bold`` is set to ``True``, the ANSI flag for bolding will be flipped on"
+" for that particular invocation, which usually shows up as a bold or "
+"brighter version of the original color on most terminals."
+msgstr ""
+"如果 ``bold`` 值为 ``True`` ，字符串将会被 ANSI 粗体标记所包裹，"
+"通常根据终端实现上的不同显示黑体或更明亮的颜色。"

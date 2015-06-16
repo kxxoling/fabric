@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-16 16:34+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../running_tests.rst:3
+msgid "Running Fabric's Tests"
+msgstr ""
+
+#: ../running_tests.rst:5
+msgid "Fabric is maintained with 100% passing tests. Where possible, patches should include tests covering the changes, making things far easier to verify & merge."
+msgstr ""
+
+#: ../running_tests.rst:8
+msgid "When developing on Fabric, it works best to establish a `virtualenv`_ to install the dependencies in isolation for running tests."
+msgstr ""
+
+#: ../running_tests.rst:16
+msgid "First-time Setup"
+msgstr ""
+
+#: ../running_tests.rst:18
+msgid "Fork the `repository`_ on GitHub"
+msgstr ""
+
+#: ../running_tests.rst:19
+msgid "Clone your new fork (e.g. ``git clone git@github.com:<your_username>/fabric.git``)"
+msgstr ""
+
+#: ../running_tests.rst:21
+msgid "``cd fabric``"
+msgstr ""
+
+#: ../running_tests.rst:22
+msgid "``virtualenv env``"
+msgstr ""
+
+#: ../running_tests.rst:23
+msgid "``. env/bin/activate``"
+msgstr ""
+
+#: ../running_tests.rst:24
+msgid "``pip install -r requirements.txt``"
+msgstr ""
+
+#: ../running_tests.rst:25
+msgid "``python setup.py develop``"
+msgstr ""
+
+#: ../running_tests.rst:32
+msgid "Running Tests"
+msgstr ""
+
+#: ../running_tests.rst:34
+msgid "Once your virtualenv is activated (``. env/bin/activate``) & you have the latest requirements, running tests is just::"
+msgstr ""
+
+#: ../running_tests.rst:39
+msgid "You should **always** run tests on ``master`` (or the release branch you're working with) to ensure they're passing before working on your own changes/tests."
+msgstr ""
+
+#: ../running_tests.rst:43
+msgid "Alternatively, if you've run ``python setup.py develop`` on your Fabric clone, you can also run::"
+msgstr ""
+
+#: ../running_tests.rst:48
+msgid "This adds additional flags which enable running doctests & adds nice coloration."
+msgstr ""
+

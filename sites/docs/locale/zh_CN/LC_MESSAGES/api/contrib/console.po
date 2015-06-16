@@ -1,0 +1,46 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-16 16:34+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../api/contrib/console.rst:2
+msgid "Console Output Utilities"
+msgstr "终端输出工具"
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/console.pydocstring
+#: of fabric.contrib.console:1
+msgid "Console/terminal user interface functionality."
+msgstr "终端用户接口实用功能。"
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/console.pydocstring
+#: of fabric.contrib.console.confirm:1
+msgid "Ask user a yes/no question and return their response as True or False."
+msgstr "询问用户 yes/no 的问题，并将用户输入转换为 True 或 False。"
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/console.pydocstring
+#: of fabric.contrib.console.confirm:3
+msgid ""
+"``question`` should be a simple, grammatically complete question such as "
+"\"Do you wish to continue?\", and will have a string similar to \" [Y/n] \" "
+"appended automatically. This function will *not* append a question mark for "
+"you."
+msgstr ""
+"``question`` 参数应当简单但合乎语法，比如“是否继续？”，问题的结尾应当接上类似“[Y/n]”"
+"这样的字符串，函数本身 *并不* 会帮你做这种事。"
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/console.pydocstring
+#: of fabric.contrib.console.confirm:8
+msgid ""
+"By default, when the user presses Enter without typing anything, \"yes\" is "
+"assumed. This can be changed by specifying ``default=False``."
+msgstr ""
+"默认情况下，用户不输入任何值直接敲击回车相当于输入 “yes”。可以通过指定 ``default=False``"
+"来修改其默认值。"

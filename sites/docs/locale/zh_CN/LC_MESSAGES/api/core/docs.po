@@ -1,0 +1,74 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-16 16:34+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../api/core/docs.rst:3
+msgid "Documentation helpers"
+msgstr "文档助手"
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/docs.pydocstring
+#: of fabric.docs.unwrap_tasks:1
+msgid ""
+"Replace task objects on ``module`` with their wrapped functions instead."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/docs.pydocstring
+#: of fabric.docs.unwrap_tasks:3
+msgid ""
+"Specifically, look for instances of `~fabric.tasks.WrappedCallableTask` and "
+"replace them with their ``.wrapped`` attribute (the original decorated "
+"function.)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/docs.pydocstring
+#: of fabric.docs.unwrap_tasks:7
+msgid ""
+"This is intended for use with the Sphinx autodoc tool, to be run near the "
+"bottom of a project's ``conf.py``. It ensures that the autodoc extension "
+"will have full access to the \"real\" function, in terms of function "
+"signature and so forth. Without use of ``unwrap_tasks``, autodoc is unable "
+"to access the function signature (though it is able to see e.g. "
+"``__doc__``.)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/docs.pydocstring
+#: of fabric.docs.unwrap_tasks:14
+msgid "For example, at the bottom of your ``conf.py``::"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/docs.pydocstring
+#: of fabric.docs.unwrap_tasks:20
+msgid ""
+"You can go above and beyond, and explicitly **hide** all non-task functions,"
+" by saying ``hide_nontasks=True``. This renames all objects failing the \"is"
+" it a task?\" check so they appear to be private, which will then cause "
+"autodoc to skip over them."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/docs.pydocstring
+#: of fabric.docs.unwrap_tasks:25
+msgid ""
+"``hide_nontasks`` is thus useful when you have a fabfile mixing in "
+"subroutines with real tasks and want to document *just* the real tasks."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/docs.pydocstring
+#: of fabric.docs.unwrap_tasks:28
+msgid ""
+"If you run this within an actual Fabric-code-using session (instead of "
+"within a Sphinx ``conf.py``), please seek immediate medical attention."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/docs.pydocstring
+#: of fabric.docs.unwrap_tasks:33
+msgid "`~fabric.tasks.WrappedCallableTask`, `~fabric.decorators.task`"
+msgstr ""

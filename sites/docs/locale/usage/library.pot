@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-16 16:34+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../usage/library.rst:3
+msgid "Library Use"
+msgstr ""
+
+#: ../usage/library.rst:5
+msgid "Fabric's primary use case is via fabfiles and the :doc:`fab </usage/fab>` tool, and this is reflected in much of the documentation. However, Fabric's internals are written in such a manner as to be easily used without ``fab`` or fabfiles at all -- this document will show you how."
+msgstr ""
+
+#: ../usage/library.rst:10
+msgid "There's really only a couple of considerations one must keep in mind, when compared to writing a fabfile and using ``fab`` to run it: how connections are really made, and how disconnections occur."
+msgstr ""
+
+#: ../usage/library.rst:15
+msgid "Connections"
+msgstr ""
+
+#: ../usage/library.rst:17
+msgid "We've documented how Fabric really connects to its hosts before, but it's currently somewhat buried in the middle of the overall :doc:`execution docs </usage/execution>`. Specifically, you'll want to skip over to the :ref:`connections` section and read it real quick. (You should really give that entire document a once-over, but it's not absolutely required.)"
+msgstr ""
+
+#: ../usage/library.rst:23
+msgid "As that section mentions, the key is simply that `~fabric.operations.run`, `~fabric.operations.sudo` and the other operations only look in one place when connecting: :ref:`env.host_string <host_string>`. All of the other mechanisms for setting hosts are interpreted by the ``fab`` tool when it runs, and don't matter when running as a library."
+msgstr ""
+
+#: ../usage/library.rst:29
+msgid "That said, most use cases where you want to marry a given task ``X`` and a given list of hosts ``Y`` can, as of Fabric 1.3, be handled with the `~fabric.tasks.execute` function via ``execute(X, hosts=Y)``. Please see `~fabric.tasks.execute`'s documentation for details -- manual host string manipulation should be rarely necessary."
+msgstr ""
+
+#: ../usage/library.rst:32
+msgid "Disconnecting"
+msgstr ""
+
+#: ../usage/library.rst:34
+msgid "The other main thing that ``fab`` does for you is to disconnect from all hosts at the end of a session; otherwise, Python will sit around forever waiting for those network resources to be released."
+msgstr ""
+
+#: ../usage/library.rst:38
+msgid "Fabric 0.9.4 and newer have a function you can use to do this easily: `~fabric.network.disconnect_all`. Simply make sure your code calls this when it terminates (typically in the ``finally`` clause of an outer ``try: finally`` statement -- lest errors in your code prevent disconnections from happening!) and things ought to work pretty well."
+msgstr ""
+
+#: ../usage/library.rst:44
+msgid "If you're on Fabric 0.9.3 or older, you can simply do this (``disconnect_all`` just adds a bit of nice output to this logic)::"
+msgstr ""
+
+#: ../usage/library.rst:55
+msgid "Final note"
+msgstr ""
+
+#: ../usage/library.rst:57
+msgid "This document is an early draft, and may not cover absolutely every difference between ``fab`` use and library use. However, the above should highlight the largest stumbling blocks. When in doubt, note that in the Fabric source code, ``fabric/main.py`` contains the bulk of the extra work done by ``fab``, and may serve as a useful reference."
+msgstr ""
+

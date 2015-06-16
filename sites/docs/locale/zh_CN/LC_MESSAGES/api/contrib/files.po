@@ -1,0 +1,379 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-16 16:34+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../api/contrib/files.rst:3
+msgid "File and Directory Management"
+msgstr "文件和目录管理"
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files:1
+msgid "Module providing easy API for working with remote files and folders."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.append:1
+msgid "Append string (or list of strings) ``text`` to ``filename``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.append:3
+msgid ""
+"When a list is given, each string inside is handled independently (but in "
+"the order given.)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.append:6
+msgid ""
+"If ``text`` is already found in ``filename``, the append is not run, and "
+"None is returned immediately. Otherwise, the given text is appended to the "
+"end of the given ``filename`` via e.g. ``echo '$text' >> $filename``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.append:10
+msgid ""
+"The test for whether ``text`` already exists defaults to a full line match, "
+"e.g. ``^<text>$``, as this seems to be the most sensible approach for the "
+"\"append lines to a file\" use case. You may override this and force partial"
+" searching (e.g. ``^<text>``) by specifying ``partial=True``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.append:15
+msgid ""
+"Because ``text`` is single-quoted, single quotes will be transparently "
+"backslash-escaped. This can be disabled with ``escape=False``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.append:18
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.contains:12
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.exists:3
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.sed:12
+msgid "If ``use_sudo`` is True, will use `sudo` instead of `run`."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.append:20
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.contains:18
+msgid ""
+"The ``shell`` argument will be eventually passed to ``run/sudo``. See "
+"description of the same argumnet in ``~fabric.contrib.sed`` for details."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.append:23
+msgid "Added the ``partial`` keyword argument."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.append:25
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.contains:21
+msgid ""
+"Swapped the order of the ``filename`` and ``text`` arguments to be "
+"consistent with other functions in this module."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.append:28
+msgid "Changed default value of ``partial`` kwarg to be ``False``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.append:30
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.contains:24
+msgid ""
+"Updated the regular expression related escaping to try and solve various "
+"corner cases."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.append:33
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.comment:30
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.contains:29
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.sed:28
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.uncomment:15
+msgid "Added the ``shell`` keyword argument."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.comment:1
+msgid "Attempt to comment out all lines in ``filename`` matching ``regex``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.comment:3
+msgid ""
+"The default commenting character is `#` and may be overridden by the "
+"``char`` argument."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.comment:6
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.uncomment:6
+msgid ""
+"This function uses the `sed` function, and will accept the same "
+"``use_sudo``, ``shell`` and ``backup`` keyword arguments that `sed` does."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.comment:9
+msgid ""
+"`comment` will prepend the comment character to the beginning of the line, "
+"so that lines end up looking like so::"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.comment:16
+msgid ""
+"In other words, comment characters will not \"follow\" indentation as they "
+"sometimes do when inserted by hand. Neither will they have a trailing space "
+"unless you specify e.g. ``char='# '``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.comment:22
+msgid ""
+"In order to preserve the line being commented out, this function will wrap "
+"your ``regex`` argument in parentheses, so you don't need to. It will ensure"
+" that any preceding/trailing ``^`` or ``$`` characters are correctly moved "
+"outside the parentheses. For example, calling ``comment(filename, "
+"r'^foo$')`` will result in a `sed` call with the \"before\" regex of "
+"``r'^(foo)$'`` (and the \"after\" regex, naturally, of ``r'#\\1'``.)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.contains:1
+msgid "Return True if ``filename`` contains ``text`` (which may be a regex.)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.contains:3
+msgid ""
+"By default, this function will consider a partial line match (i.e. where "
+"``text`` only makes up part of the line it's on). Specify ``exact=True`` to "
+"change this behavior so that only a line containing exactly ``text`` results"
+" in a True return value."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.contains:8
+msgid ""
+"This function leverages ``egrep`` on the remote end (so it may not follow "
+"Python regular expression syntax perfectly), and skips ``env.shell`` wrapper"
+" by default."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.contains:14
+msgid ""
+"If ``escape`` is False, no extra regular expression related escaping is "
+"performed (this includes overriding ``exact`` so that no ``^``/``$`` is "
+"added.)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.contains:27
+msgid "Added ``escape`` keyword argument."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.exists:1
+msgid "Return True if given path exists on the current remote host."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.exists:5
+msgid ""
+"`exists` will, by default, hide all output (including the run line, stdout, "
+"stderr and any warning resulting from the file not existing) in order to "
+"avoid cluttering output. You may specify ``verbose=True`` to change this "
+"behavior."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.first:1
+msgid ""
+"Given one or more file paths, returns first one found, or None if none "
+"exist. May specify ``use_sudo`` and ``verbose`` which are passed to "
+"`exists`."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.is_link:1
+msgid "Return True if the given path is a symlink on the current remote host."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.is_link:3
+msgid "If ``use_sudo`` is True, will use `.sudo` instead of `.run`."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.is_link:5
+msgid ""
+"`.is_link` will, by default, hide all output. Give ``verbose=True`` to "
+"change this."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.sed:1
+msgid "Run a search-and-replace on ``filename`` with given regex patterns."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.sed:3
+msgid ""
+"Equivalent to ``sed -i<backup> -r -e \"/<limit>/ "
+"s/<before>/<after>/<flags>g\" <filename>``. Setting ``backup`` to an empty "
+"string will, disable backup file creation."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.sed:7
+msgid ""
+"For convenience, ``before`` and ``after`` will automatically escape forward "
+"slashes, single quotes and parentheses for you, so you don't need to specify"
+" e.g.  ``http:\\/\\/foo\\.com``, instead just using ``http://foo\\.com`` is "
+"fine."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.sed:14
+msgid ""
+"The ``shell`` argument will be eventually passed to `run`/`sudo`. It "
+"defaults to False in order to avoid problems with many nested levels of "
+"quotes and backslashes. However, setting it to True may help when using "
+"``~fabric.operations.cd`` to wrap explicit or implicit ``sudo`` calls. "
+"(``cd`` by it's nature is a shell built-in, not a standalone command, so it "
+"should be called within a shell.)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.sed:21
+msgid ""
+"Other options may be specified with sed-compatible regex flags -- for "
+"example, to make the search and replace case insensitive, specify "
+"``flags=\"i\"``. The ``g`` flag is always specified regardless, so you do "
+"not need to remember to include it when overriding this parameter."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.sed:26
+msgid "The ``flags`` parameter."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.uncomment:1
+msgid "Attempt to uncomment all lines in ``filename`` matching ``regex``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.uncomment:3
+msgid ""
+"The default comment delimiter is `#` and may be overridden by the ``char`` "
+"argument."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.uncomment:9
+msgid ""
+"`uncomment` will remove a single whitespace character following the comment "
+"character, if it exists, but will preserve all preceding whitespace.  For "
+"example, ``# foo`` would become ``foo`` (the single space is stripped) but "
+"``    # foo`` would become ``    foo`` (the single space is still stripped, "
+"but the preceding 4 spaces are not.)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.upload_template:1
+msgid "Render and upload a template text file to a remote host."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.upload_template:3
+msgid ""
+"Returns the result of the inner call to `~fabric.operations.put` -- see its "
+"documentation for details."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.upload_template:6
+msgid ""
+"``filename`` should be the path to a text file, which may contain `Python "
+"string interpolation formatting "
+"<http://docs.python.org/library/stdtypes.html#string-formatting>`_ and will "
+"be rendered with the given context dictionary ``context`` (if given.)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.upload_template:11
+msgid ""
+"Alternately, if ``use_jinja`` is set to True and you have the Jinja2 "
+"templating library available, Jinja will be used to render the template "
+"instead. Templates will be loaded from the invoking user's current working "
+"directory by default, or from ``template_dir`` if given."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.upload_template:16
+msgid ""
+"The resulting rendered file will be uploaded to the remote file path "
+"``destination``.  If the destination file already exists, it will be renamed"
+" with a ``.bak`` extension unless ``backup=False`` is specified."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.upload_template:20
+msgid ""
+"By default, the file will be copied to ``destination`` as the logged-in "
+"user; specify ``use_sudo=True`` to use `sudo` instead."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.upload_template:23
+msgid ""
+"The ``mirror_local_mode`` and ``mode`` kwargs are passed directly to an "
+"internal `~fabric.operations.put` call; please see its documentation for "
+"details on these two options."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.upload_template:27
+msgid ""
+"The ``pty`` kwarg will be passed verbatim to any internal "
+"`~fabric.operations.run`/`~fabric.operations.sudo` calls, such as those used"
+" for testing directory-ness, making backups, etc."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.upload_template:31
+msgid "Added the ``backup``, ``mirror_local_mode`` and ``mode`` kwargs."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
+#: of fabric.contrib.files.upload_template:33
+msgid "Added the ``pty`` kwarg."
+msgstr ""

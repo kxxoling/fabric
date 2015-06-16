@@ -1,0 +1,573 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-16 16:34+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../tutorial.rst:3
+msgid "Overview and Tutorial"
+msgstr "概览 & 教程"
+
+#: ../tutorial.rst:5
+msgid "Welcome to Fabric!"
+msgstr "欢迎使用 Fabric！"
+
+#: ../tutorial.rst:7
+msgid ""
+"This document is a whirlwind tour of Fabric's features and a quick guide to "
+"its use. Additional documentation (which is linked to throughout) can be "
+"found in the :ref:`usage documentation <usage-docs>` -- please make sure to "
+"check it out."
+msgstr ""
+"本文档走马观花式地介绍 Fabric 特性，也是对其使用的快速指导。其他文档"
+"（这里通篇的链接都指向它们）可以在 :ref:`usage documentation <usage-docs>` "
+"中找到——请不要忘了一并阅读。"
+
+#: ../tutorial.rst:13
+msgid "What is Fabric?"
+msgstr "Fabric 是什么？"
+
+#: ../tutorial.rst:15
+msgid "As the ``README`` says:"
+msgstr "如 README 所说："
+
+#: ../../../README.rst:1
+msgid ""
+"Fabric is a Python (2.5-2.7) library and command-line tool for streamlining "
+"the use of SSH for application deployment or systems administration tasks."
+msgstr ""
+"Fabric 是一个 Python (2.5-2.7) 的库和命令行工具，用来提高基于 SSH 的应用部署"
+"和系统管理效率。"
+
+#: ../tutorial.rst:20
+msgid "More specifically, Fabric is:"
+msgstr "更具体地说，Fabric 是："
+
+#: ../tutorial.rst:22
+msgid ""
+"A tool that lets you execute **arbitrary Python functions** via the "
+"**command line**;"
+msgstr "一个让你通过 **命令行** 执行 **无参数 Python 函数** 的工具；"
+
+#: ../tutorial.rst:24
+msgid ""
+"A library of subroutines (built on top of a lower-level library) to make "
+"executing shell commands over SSH **easy** and **Pythonic**."
+msgstr ""
+"一个让通过 SSH 执行 Shell 命令更加 **容易** 、 **更符合 Python 风格** "
+"的命令库（建立于一个更低层次的库）。"
+
+#: ../tutorial.rst:27
+msgid ""
+"Naturally, most users combine these two things, using Fabric to write and "
+"execute Python functions, or **tasks**, to automate interactions with remote"
+" servers. Let's take a look."
+msgstr ""
+"自然而然地，大部分用户把这两件事结合着用，使用 Fabric 来写和执行 Python 函数或 "
+"**task** ，以实现与远程服务器的自动化交互。让我们一睹为快吧。"
+
+#: ../tutorial.rst:33
+msgid "Hello, ``fab``"
+msgstr ""
+
+#: ../tutorial.rst:35
+msgid "This wouldn't be a proper tutorial without \"the usual\"::"
+msgstr "一个合格的教程少不了这个“惯例”： ::"
+
+#: ../tutorial.rst:40
+msgid ""
+"Placed in a Python module file named ``fabfile.py`` in your current working "
+"directory, that ``hello`` function can be executed with the ``fab`` tool "
+"(installed as part of Fabric) and does just what you'd expect::"
+msgstr ""
+"把上述代码放在你当前的工作目录中一个名为 ``fabfile.py`` 的 Python 模块文件中。"
+"然后这个 ``hello`` 函数就可以用 ``fab`` 工具（随 Fabric 一并安装的命令）来执行了，"
+"输出的结果会是这样： ::"
+
+#: ../tutorial.rst:49
+msgid ""
+"That's all there is to it. This functionality allows Fabric to be used as a "
+"(very) basic build tool even without importing any of its API."
+msgstr ""
+"以上就是配置文件的全部。它基于 Fabric 实现了一个（极其）简单的构建工具，"
+"简单到甚至不用导入任何 Fabric API。"
+
+#: ../tutorial.rst:54
+msgid ""
+"The ``fab`` tool simply imports your fabfile and executes the function or "
+"functions you instruct it to. There's nothing magic about it -- anything you"
+" can do in a normal Python script can be done in a fabfile!"
+msgstr ""
+"``fab`` 工具所做的只是导入 fabfile 并执行了相应一个或多个的函数，"
+"这里并没有任何魔法——任何你能在一个普通 Python 模块中做的事情"
+"同样可以在一个 fabfile 中完成。"
+
+
+#: ../tutorial.rst:58
+msgid ":ref:`execution-strategy`, :doc:`/usage/tasks`, :doc:`/usage/fab`"
+msgstr ""
+
+#: ../tutorial.rst:62
+msgid "Task arguments"
+msgstr "任务参数"
+
+#: ../tutorial.rst:64
+msgid ""
+"It's often useful to pass runtime parameters into your tasks, just as you "
+"might during regular Python programming. Fabric has basic support for this "
+"using a shell-compatible notation: ``<task "
+"name>:<arg>,<kwarg>=<value>,...``. It's contrived, but let's extend the "
+"above example to say hello to you personally::"
+msgstr ""
+"和你平时的 Python 编程一样，给任务函数传递参数很有必要``。"
+"Fabric 支持 Shell 兼容的参数用法： ``<任务名>:<参数>, <关键字参数名>=<参数值>,...`` "
+"用起来就是这样，下面我们用一个 say hello 的实例来展开说明一下："
+
+#: ../tutorial.rst:72
+msgid ""
+"By default, calling ``fab hello`` will still behave as it did before; but "
+"now we can personalize it::"
+msgstr ""
+"默认情况下， ``fab hello`` 的调用结果仍和之前相同，但现在我们可以做些个性化定制了： ::"
+
+#: ../tutorial.rst:80
+msgid ""
+"Those already used to programming in Python might have guessed that this "
+"invocation behaves exactly the same way::"
+msgstr ""
+"用过 Python 编程的同学可能已经猜到了，这样调用会输出一样的结果： ::"
+
+#: ../tutorial.rst:88
+msgid ""
+"For the time being, your argument values will always show up in Python as "
+"strings and may require a bit of string manipulation for complex types such "
+"as lists. Future versions may add a typecasting system to make this easier."
+msgstr ""
+"目前，参数值只能作为 Python 字符串来使用，如果要使用列表这样的复杂类型，"
+"需要一些字符串操作处理。将来的版本可能会添加一个类型转换系统以简化这类处理。"
+
+#: ../tutorial.rst:92
+msgid ":ref:`task-arguments`"
+msgstr ""
+
+#: ../tutorial.rst:95
+msgid "Local commands"
+msgstr "本地命令"
+
+#: ../tutorial.rst:97
+msgid ""
+"As used above, ``fab`` only really saves a couple lines of ``if __name__ == "
+"\"__main__\"`` boilerplate. It's mostly designed for use with Fabric's API, "
+"which contains functions (or **operations**) for executing shell commands, "
+"transferring files, and so forth."
+msgstr ""
+"在前面的例子中， fab 实际上只节省了数行 ``if __name__ == \"__main__\"`` "
+"这样的惯例代码而已。Fabric 的设计目的更是为了使用它自己的 API，"
+"包括执行 Shell 命令、传送文件等函数（或操作）接口。"
+
+#: ../tutorial.rst:102
+msgid ""
+"Let's build a hypothetical Web application fabfile. This example scenario is"
+" as follows: The Web application is managed via Git on a remote host "
+"``vcshost``. On ``localhost``, we have a local clone of said Web "
+"application. When we push changes back to ``vcshost``, we want to be able to"
+" immediately install these changes on a remote host ``my_server`` in an "
+"automated fashion. We will do this by automating the local and remote Git "
+"commands."
+msgstr ""
+"假设我们需要为一个 web 应用创建 fabfile 。具体的情景如下："
+"这个 web 应用的代码使用 git 托管在一台远程服务器 ``vcshost`` 上，"
+"我们把它的代码库克隆到了本地 ``localhost`` 中。我们希望在我们把修改后的代码 push 回 "
+"vcshost 时，自动把新的版本安装到另一台远程服务器 ``my_server`` 上。"
+"我们将通过自动化本地和远程 git 命令来完成这些工作。"
+
+#: ../tutorial.rst:109
+msgid "Fabfiles usually work best at the root of a project::"
+msgstr "关于 fabfile 文件放置位置的最佳时间是项目的根目录： ::"
+
+#: ../tutorial.rst:127
+msgid ""
+"We're using a Django application here, but only as an example -- Fabric is "
+"not tied to any external codebase, save for its SSH library."
+msgstr ""
+"在这里我们使用一个 Django 应用为例——不过 Fabric 并s依赖于外部代码，"
+"除了它的 SSH 库。"
+
+#: ../tutorial.rst:130
+msgid ""
+"For starters, perhaps we want to run our tests and commit to our VCS so "
+"we're ready for a deploy::"
+msgstr "作为起步，我们希望先执行测试准备好部署后，再提交到 VCS（版本控制系统）： ::"
+
+#: ../tutorial.rst:140
+msgid "The output of which might look a bit like this::"
+msgstr "这段代码的输出会是这样： ::"
+
+#: ../tutorial.rst:164
+msgid ""
+"The code itself is straightforward: import a Fabric API function, "
+"`~fabric.operations.local`, and use it to run and interact with local shell "
+"commands. The rest of Fabric's API is similar -- it's all just Python."
+msgstr ""
+"这段代码很简单，导入一个 Fabric API："
+" `~fabric.operations.local` ，然后用它执行本地 Shell 命令并与之交互，"
+"剩下的 Fabric API 也都类似——它们都只是 Python。"
+
+#: ../tutorial.rst:168
+msgid ":doc:`api/core/operations`, :ref:`fabfile-discovery`"
+msgstr ""
+
+#: ../tutorial.rst:172
+msgid "Organize it your way"
+msgstr "用你的方式来组织"
+
+#: ../tutorial.rst:174
+msgid ""
+"Because Fabric is \"just Python\" you're free to organize your fabfile any "
+"way you want. For example, it's often useful to start splitting things up "
+"into subtasks::"
+msgstr ""
+"因为 Fabric “只是 Python”，所以你可以按你喜欢的方式来组织 fabfile 。"
+"比如说，把任务分割成多个子任务： ::"
+
+#: ../tutorial.rst:194
+msgid ""
+"The ``prepare_deploy`` task can be called just as before, but now you can "
+"make a more granular call to one of the sub-tasks, if desired."
+msgstr ""
+"这个 ``prepare_deploy`` 任务仍可以像之前那样调用，但现在只要你愿意，"
+"就可以调用更细粒度的子任务。"
+
+#: ../tutorial.rst:199
+msgid "Failure"
+msgstr "故障"
+
+#: ../tutorial.rst:201
+msgid ""
+"Our base case works fine now, but what happens if our tests fail?  Chances "
+"are we want to put on the brakes and fix them before deploying."
+msgstr ""
+"我们的基本案例已经可以正常工作了，但如果测试失败了会怎样？"
+"我们应该抓住机会即使停下任务，并在部署之前修复这些失败的测试。"
+
+#: ../tutorial.rst:204
+msgid ""
+"Fabric checks the return value of programs called via operations and will "
+"abort if they didn't exit cleanly. Let's see what happens if one of our "
+"tests encounters an error::"
+msgstr ""
+"Fabric 会检查被调用程序的返回值，如果这些程序没有干净地退出，Fabric 会终止操作。"
+"下面我们就来看看如果一个测试用例遇到错误时会发生什么： ::"
+
+#: ../tutorial.rst:230
+msgid ""
+"Great! We didn't have to do anything ourselves: Fabric detected the failure "
+"and aborted, never running the ``commit`` task."
+msgstr ""
+"太好了！我们什么都不用做，Fabric 检测到了错误并终止，不会继续执行 commit 任务。"
+
+#: ../tutorial.rst:233
+msgid ":ref:`Failure handling (usage documentation) <failures>`"
+msgstr ""
+
+#: ../tutorial.rst:236
+msgid "Failure handling"
+msgstr "故障处理"
+
+#: ../tutorial.rst:238
+msgid ""
+"But what if we wanted to be flexible and give the user a choice? A setting "
+"(or **environment variable**, usually shortened to **env var**) called "
+":ref:`warn_only` lets you turn aborts into warnings, allowing flexible error"
+" handling to occur."
+msgstr ""
+"但如果我们想更加灵活，给用户另一个选择，该怎么办？"
+"一个名为 :ref:`warn_only` 的设置（或着说 **环境变量** ，通常缩写为 **env var** ）"
+"可以把退出换为警告，以提供更灵活的错误处理。"
+
+#: ../tutorial.rst:243
+msgid ""
+"Let's flip this setting on for our ``test`` function, and then inspect the "
+"result of the `~fabric.operations.local` call ourselves::"
+msgstr ""
+"让我们把这个设置丢到 ``test`` 函数中，然后注意这个 `~fabric.operations.local` "
+"调用的结果： ::"
+
+#: ../tutorial.rst:258
+msgid "In adding this new feature we've introduced a number of new things:"
+msgstr "为了引入这个新特性，我们需要添加一些新东西："
+
+#: ../tutorial.rst:260
+msgid "The ``__future__`` import required to use ``with:`` in Python 2.5;"
+msgstr "在 Python 2.5 中，需要从 ``__future__`` 中导入 ``with`` ；"
+
+#: ../tutorial.rst:261
+msgid ""
+"Fabric's `contrib.console <fabric.contrib.console>` submodule, containing "
+"the `~fabric.contrib.console.confirm` function, used for simple yes/no "
+"prompts;"
+msgstr ""
+"Fabric `contrib.console <fabric.contrib.console>` 子模块提供了 "
+" `~fabric.contrib.console.confirm` 函数，用于简单的 yes/no 提示。"
+
+#: ../tutorial.rst:263
+msgid ""
+"The `~fabric.context_managers.settings` context manager, used to apply "
+"settings to a specific block of code;"
+msgstr ""
+"`~fabric.context_managers.settings` 上下文管理器提供了特定代码块特殊设置的功能。"
+
+#: ../tutorial.rst:265
+msgid ""
+"Command-running operations like `~fabric.operations.local` can return "
+"objects containing info about their result (such as ``.failed``, or "
+"``.return_code``);"
+msgstr ""
+"`~fabric.operations.local` 这样运行命令的操作会返回一个包含执行结果"
+"（ ``.failed`` 或 ``.return_code`` 属性）的对象。"
+
+#: ../tutorial.rst:268
+msgid ""
+"And the `~fabric.utils.abort` function, used to manually abort execution."
+msgstr "`~fabric.utils.abort` 函数用于手动停止任务的执行。"
+
+#: ../tutorial.rst:270
+msgid ""
+"However, despite the additional complexity, it's still pretty easy to "
+"follow, and is now much more flexible."
+msgstr ""
+"即使增加了上述复杂度，整个处理过程仍然很容易理解，而且它已经远比之前灵活。"
+
+#: ../tutorial.rst:273
+msgid ":doc:`api/core/context_managers`, :ref:`env-vars`"
+msgstr ""
+
+#: ../tutorial.rst:277
+msgid "Making connections"
+msgstr "建立连接"
+
+#: ../tutorial.rst:279
+msgid ""
+"Let's start wrapping up our fabfile by putting in the keystone: a ``deploy``"
+" task that is destined to run on one or more remote server(s), and ensures "
+"the code is up to date::"
+msgstr ""
+"让我们回到 fabfile 的主旨：定义一个 ``deploy`` 任务，让它在一台或多台远程服务器上运行，"
+"并保证代码是最新的： ::"
+
+#: ../tutorial.rst:289
+msgid "Here again, we introduce a handful of new concepts:"
+msgstr "这里再次引入了一些新的概念： ::"
+
+#: ../tutorial.rst:291
+msgid ""
+"Fabric is just Python -- so we can make liberal use of regular Python code "
+"constructs such as variables and string interpolation;"
+msgstr ""
+"Fabric 是 Python——所以我们可以自由地使用变量、字符串等常规的 Python 代码；"
+
+#: ../tutorial.rst:293
+msgid ""
+"`~fabric.context_managers.cd`, an easy way of prefixing commands with a ``cd"
+" /to/some/directory`` call. This is similar to  "
+"`~fabric.context_managers.lcd` which does the same locally."
+msgstr ""
+"`~fabric.context_managers.cd` 函数是一个简易的前缀命令，相当于运行 "
+"``cd /to/some/directory`` ，和 `~fabric.context_managers.lcd` 函数类似，"
+"只不过后者是在本地执行。"
+
+#: ../tutorial.rst:296
+msgid ""
+"`~fabric.operations.run`, which is similar to `~fabric.operations.local` but"
+" runs **remotely** instead of locally."
+msgstr ""
+"~fabric.operations.run` 和 `~fabric.operations.local` 类似，不过是在 **远程** "
+"而非本地执行。"
+
+#: ../tutorial.rst:299
+msgid ""
+"We also need to make sure we import the new functions at the top of our "
+"file::"
+msgstr "我们还需要保证在文件顶部导入了这些新函数： ::"
+
+#: ../tutorial.rst:305
+msgid "With these changes in place, let's deploy::"
+msgstr "改好之后，我们重新部署： ::"
+
+#: ../tutorial.rst:316
+msgid ""
+"We never specified any connection info in our fabfile, so Fabric doesn't "
+"know on which host(s) the remote command should be executed. When this "
+"happens, Fabric prompts us at runtime. Connection definitions use SSH-like "
+"\"host strings\" (e.g. ``user@host:port``) and will use your local username "
+"as a default -- so in this example, we just had to specify the hostname, "
+"``my_server``."
+msgstr ""
+"我们并没有在 fabfile 中指定任何连接信息，所以 Fabric 依旧不知道该在哪里运行"
+"这些远程命令。遇到这种情况时，Fabric 会在运行时提示我们。"
+"连接的定义使用 SSH 风格的“主机串”（例如： user@host:port ），"
+"默认使用你的本地用户名——所以在这个例子中，我们只需要指定主机名 ``my_server`` 。"
+
+#: ../tutorial.rst:325
+msgid "Remote interactivity"
+msgstr "与远程交互"
+
+#: ../tutorial.rst:327
+msgid ""
+"``git pull`` works fine if you've already got a checkout of your source code"
+" -- but what if this is the first deploy? It'd be nice to handle that case "
+"too and do the initial ``git clone``::"
+msgstr ""
+"如果你已经得到了代码，说明 ``git pull`` 执行非常顺利——但如果这是第一次部署呢？"
+"最好也能应付这样的情况，这时应该使用 ``git clone`` 来初始化代码库： ::"
+
+#: ../tutorial.rst:340
+msgid ""
+"As with our calls to `~fabric.operations.local` above, "
+"`~fabric.operations.run` also lets us construct clean Python-level logic "
+"based on executed shell commands. However, the interesting part here is the "
+"``git clone`` call: since we're using Git's SSH method of accessing the "
+"repository on our Git server, this means our remote `~fabric.operations.run`"
+" call will need to authenticate itself."
+msgstr ""
+"和上面调用 `~fabric.operations.local` 一样， `~fabric.operations.run` 也提供"
+"基于 Shell 命令构建干净的 Python 逻辑。这里最有趣的部分是 ``git clone`` ："
+"因为我们是用 git 的 SSH 方法来访问 git 服务器上的代码库，这意味着我们远程"
+"执行的 `~fabric.operations.run` 需要自己提供身份验证。"
+
+#: ../tutorial.rst:347
+msgid ""
+"Older versions of Fabric (and similar high level SSH libraries) run remote "
+"programs in limbo, unable to be touched from the local end. This is "
+"problematic when you have a serious need to enter passwords or otherwise "
+"interact with the remote program."
+msgstr ""
+"旧版本的 Fabric（和其他类似的高层次 SSH 库）像在监狱里一样运行远程命令，"
+"无法提供本地交互。当你迫切需要输入密码或者与远程程序交互时，这就很成问题。"
+
+#: ../tutorial.rst:352
+msgid ""
+"Fabric 1.0 and later breaks down this wall and ensures you can always talk "
+"to the other side. Let's see what happens when we run our updated ``deploy``"
+" task on a new server with no Git checkout::"
+msgstr ""
+"Fabric 1.0 和后续的版本突破了这个限制，并保证你和另一端的会话交互。"
+"让我们看看当我们在一台没有 git checkout 的新服务器上运行更新后的 deploy 任务时会发生什么： ::"
+
+#: ../tutorial.rst:378
+msgid ""
+"Notice the ``Password:`` prompt -- that was our remote ``git`` call on our "
+"Web server, asking for the password to the Git server. We were able to type "
+"it in and the clone continued normally."
+msgstr ""
+"注意那个 ``Password:`` 提示——那就是我们在 web 服务器上的远程 ``git`` 应用在请求"
+" git 密码。我们可以在本地输入密码，然后像往常一样继续克隆。"
+
+#: ../tutorial.rst:380
+msgid ":doc:`/usage/interactivity`"
+msgstr ""
+
+#: ../tutorial.rst:386
+msgid "Defining connections beforehand"
+msgstr "预定义连接"
+
+#: ../tutorial.rst:388
+msgid ""
+"Specifying connection info at runtime gets old real fast, so Fabric provides"
+" a handful of ways to do it in your fabfile or on the command line. We won't"
+" cover all of them here, but we will show you the most common one: setting "
+"the global host list, :ref:`env.hosts <hosts>`."
+msgstr ""
+"在运行输入连接信息已经是非常古老的做法了，Fabric 提供了一套在 fabfile 或命令行中"
+"指定服务器信息的简单方法。这里我们不展开说明，但是会展示最常用的方法："
+"设置全局主机列表 :ref:`env.hosts <hosts>` 。"
+
+#: ../tutorial.rst:393
+msgid ""
+":doc:`env <usage/env>` is a global dictionary-like object driving many of "
+"Fabric's settings, and can be written to with attributes as well (in fact, "
+"`~fabric.context_managers.settings`, seen above, is simply a wrapper for "
+"this.) Thus, we can modify it at module level near the top of our fabfile "
+"like so::"
+msgstr ""
+":doc:`env <usage/env>` 是一个全局的类字典对象，是 Fabric 很多设置的基础，"
+"也能在 with 表达式中使用（事实上，前面见过的 ``~fabric.context_managers.settings`` "
+"就是它的一个简单封装）。因此，我们可以在模块层次上，在 fabfile 的顶部附近修改它，就像这样： ::"
+
+#: ../tutorial.rst:407
+msgid ""
+"When ``fab`` loads up our fabfile, our modification of ``env`` will execute,"
+" storing our settings change. The end result is exactly as above: our "
+"``deploy`` task will run against the ``my_server`` server."
+msgstr ""
+"当 ``fab`` 加载 fabfile 时，将会执行我们对 ``env`` 的修改并保存设置的变化。"
+"最终结果如上所示：我们的 ``deploy`` 任务将在 ``my_server`` 上运行。"
+
+#: ../tutorial.rst:411
+msgid ""
+"This is also how you can tell Fabric to run on multiple remote systems at "
+"once: because ``env.hosts`` is a list, ``fab`` iterates over it, calling the"
+" given task once for each connection."
+msgstr ""
+"这就是如何指定 Fabric 一次性控制多台远程服务器的方法： ``env.hosts`` 是一个列表，"
+" ``fab`` 对它迭代，对每个连接运行指定的任务。"
+
+#: ../tutorial.rst:415
+msgid ":doc:`usage/env`, :ref:`host-lists`"
+msgstr ""
+
+#: ../tutorial.rst:419
+msgid "Conclusion"
+msgstr "总结"
+
+#: ../tutorial.rst:421
+msgid ""
+"Our completed fabfile is still pretty short, as such things go. Here it is "
+"in its entirety::"
+msgstr ""
+"虽然经历了很多，我们的 fabfile 文件仍然相当短。下面是它的完整内容： ::"
+
+#: ../tutorial.rst:456
+msgid "This fabfile makes use of a large portion of Fabric's feature set:"
+msgstr "但它已经涉及到了 Fabric 中的很多功能： ::"
+
+#: ../tutorial.rst:458
+msgid "defining fabfile tasks and running them with :doc:`fab <usage/fab>`;"
+msgstr "定义 fabfile 任务，并用 :doc:`fab <usage/fab>` 执行；"
+
+#: ../tutorial.rst:459
+msgid "calling local shell commands with `~fabric.operations.local`;"
+msgstr "用 `~fabric.operations.local` 调用本地 shell 命令；"
+
+#: ../tutorial.rst:460
+msgid "modifying env vars with `~fabric.context_managers.settings`;"
+msgstr "通过 `~fabric.context_managers.settings` 修改 env 变量；"
+
+#: ../tutorial.rst:461
+msgid "handling command failures, prompting the user, and manually aborting;"
+msgstr "处理失败命令、提示用户、手动取消任务；"
+
+#: ../tutorial.rst:462
+msgid ""
+"and defining host lists and `~fabric.operations.run`-ning remote commands."
+msgstr "以及定义主机列表、使用 `~fabric.operations.run` 来执行远程命令。"
+
+#: ../tutorial.rst:464
+msgid ""
+"However, there's still a lot more we haven't covered here! Please make sure "
+"you follow the various \"see also\" links, and check out the documentation "
+"table of contents on :doc:`the main index page <index>`."
+msgstr ""
+"还有更多这里没有涉及到的内容，你还可以看看所有“参见”中的链接，以及"
+" :doc:`索引页 <index>` 的内容表。"
+
+#: ../tutorial.rst:468
+msgid "Thanks for reading!"
+msgstr ""

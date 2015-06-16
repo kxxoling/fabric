@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-16 16:34+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../api/core/utils.rst:3
+msgid "Utils"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils:1
+msgid "Internal subroutines for e.g. aborting execution with an error message, or performing indenting on multiline output."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.abort:1
+msgid "Abort execution, print ``msg`` to stderr and exit with error status (1.)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.abort:3
+msgid "This function currently makes use of `sys.exit`_, which raises `SystemExit`_. Therefore, it's possible to detect and recover from inner calls to `abort` by using ``except SystemExit`` or similar."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.error:1
+msgid "Call ``func`` with given error ``message``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.error:3
+msgid "If ``func`` is None (the default), the value of ``env.warn_only`` determines whether to call ``abort`` or ``warn``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.error:6
+msgid "If ``exception`` is given, it is inspected to get a string message, which is printed alongside the user-generated ``message``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.error:9
+msgid "If ``stdout`` and/or ``stderr`` are given, they are assumed to be strings to be printed."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.fastprint:1
+msgid "Print ``text`` immediately, without any prefix or line ending."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.fastprint:3
+msgid "This function is simply an alias of `~fabric.utils.puts` with different default argument values, such that the ``text`` is printed without any embellishment and immediately flushed."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.fastprint:7
+msgid "It is useful for any situation where you wish to print text which might otherwise get buffered by Python's output buffering (such as within a processor intensive ``for`` loop). Since such use cases typically also require a lack of line endings (such as printing a series of dots to signify progress) it also omits the traditional newline by default."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.fastprint:15
+msgid "Since `~fabric.utils.fastprint` calls `~fabric.utils.puts`, it is likewise subject to the ``user`` :doc:`output level </usage/output_controls>`."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.fastprint:20
+msgid "`~fabric.utils.puts`"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.indent:1
+msgid "Return ``text`` indented by the given number of spaces."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.indent:3
+msgid "If text is not a string, it is assumed to be a list of lines and will be joined by ``\\n`` prior to indenting."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.indent:6
+msgid "When ``strip`` is ``True``, a minimum amount of whitespace is removed from the left-hand side of the given string (so that relative indents are preserved, but otherwise things are left-stripped). This allows you to effectively \"normalize\" any previous indentation for some inputs."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.isatty:1
+msgid "Check if a stream is a tty."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.isatty:3
+msgid "Not all file-like objects implement the `isatty` method."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.puts:1
+msgid "An alias for ``print`` whose output is managed by Fabric's output controls."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.puts:3
+msgid "In other words, this function simply prints to ``sys.stdout``, but will hide its output if the ``user`` :doc:`output level </usage/output_controls>` is set to ``False``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.puts:7
+msgid "If ``show_prefix=False``, `puts` will omit the leading ``[hostname]`` which it tacks on by default. (It will also omit this prefix if ``env.host_string`` is empty.)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.puts:11
+msgid "Newlines may be disabled by setting ``end`` to the empty string (``''``). (This intentionally mirrors Python 3's ``print`` syntax.)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.puts:14
+msgid "You may force output flushing (e.g. to bypass output buffering) by setting ``flush=True``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.puts:18
+msgid "`~fabric.utils.fastprint`"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.warn:1
+msgid "Print warning message, but do not abort execution."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.py:docstring of fabric.utils.warn:3
+msgid "This function honors Fabric's :doc:`output controls <../../usage/output_controls>` and will print the given ``msg`` to stderr, provided that the ``warnings`` output level (which is active by default) is turned on."
+msgstr ""
+

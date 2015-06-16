@@ -1,0 +1,839 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-16 16:34+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../api/core/operations.rst:3
+msgid "Operations"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations:1
+msgid ""
+"Functions to be used in fabfiles and other non-core code, such as "
+"run()/sudo()."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:1
+msgid "Download one or more files from a remote host."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:3
+msgid ""
+"`~fabric.operations.get` returns an iterable containing the absolute paths "
+"to all local files downloaded, which will be empty if ``local_path`` was a "
+"StringIO object (see below for more on using StringIO). This object will "
+"also exhibit a ``.failed`` attribute containing any remote file paths which "
+"failed to download, and a ``.succeeded`` attribute equivalent to ``not "
+".failed``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:10
+msgid ""
+"``remote_path`` is the remote file or directory path to download, which may "
+"contain shell glob syntax, e.g. ``\"/var/log/apache2/*.log\"``, and will "
+"have tildes replaced by the remote home directory. Relative paths will be "
+"considered relative to the remote user's home directory, or the current "
+"remote working directory as manipulated by `~fabric.context_managers.cd`. If"
+" the remote path points to a directory, that directory will be downloaded "
+"recursively."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:18
+msgid ""
+"``local_path`` is the local file path where the downloaded file or files "
+"will be stored. If relative, it will honor the local current working "
+"directory as manipulated by `~fabric.context_managers.lcd`. It may be "
+"interpolated, using standard Python dict-based interpolation, with the "
+"following variables:"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:24
+msgid ""
+"``host``: The value of ``env.host_string``, eg ``myhostname`` or "
+"``user@myhostname-222`` (the colon between hostname and port is turned into "
+"a dash to maximize filesystem compatibility)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:27
+msgid ""
+"``dirname``: The directory part of the remote file path, e.g. the "
+"``src/projectname`` in ``src/projectname/utils.py``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:29
+msgid ""
+"``basename``: The filename part of the remote file path, e.g. the "
+"``utils.py`` in ``src/projectname/utils.py``"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:31
+msgid "``path``: The full remote path, e.g. ``src/projectname/utils.py``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:33
+msgid ""
+"While the SFTP protocol (which `get` uses) has no direct ability to download"
+" files from locations not owned by the connecting user, you may specify "
+"``use_sudo=True`` to work around this. When set, this setting allows `get` "
+"to copy (using sudo) the remote files to a temporary location on the remote "
+"end (defaults to remote user's ``$HOME``; this may be overridden via "
+"``temp_dir``), and then download them to ``local_path``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:41
+msgid ""
+"When ``remote_path`` is an absolute directory path, only the inner "
+"directories will be recreated locally and passed into the above variables. "
+"So for example, ``get('/var/log', '%(path)s')`` would start writing out "
+"files like ``apache2/access.log``, ``postgresql/8.4/postgresql.log``, etc, "
+"in the local working directory. It would **not** write out e.g.  "
+"``var/log/apache2/access.log``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:48
+msgid ""
+"Additionally, when downloading a single file, ``%(dirname)s`` and "
+"``%(path)s`` do not make as much sense and will be empty and equivalent to "
+"``%(basename)s``, respectively. Thus a call like "
+"``get('/var/log/apache2/access.log', '%(path)s')`` will save a local file "
+"named ``access.log``, not ``var/log/apache2/access.log``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:54
+msgid ""
+"This behavior is intended to be consistent with the command-line ``scp`` "
+"program."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:57
+msgid ""
+"If left blank, ``local_path`` defaults to ``\"%(host)s/%(path)s\"`` in order"
+" to be safe for multi-host invocations."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:61
+msgid ""
+"If your ``local_path`` argument does not contain ``%(host)s`` and your "
+"`~fabric.operations.get` call runs against multiple hosts, your local files "
+"will be overwritten on each successive run!"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:65
+msgid ""
+"If ``local_path`` does not make use of the above variables (i.e. if it is a "
+"simple, explicit file path) it will act similar to ``scp`` or ``cp``, "
+"overwriting pre-existing files if necessary, downloading into a directory if"
+" given (e.g. ``get('/path/to/remote_file.txt', 'local_directory')`` will "
+"create ``local_directory/remote_file.txt``) and so forth."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:71
+msgid ""
+"``local_path`` may alternately be a file-like object, such as the result of "
+"``open('path', 'w')`` or a ``StringIO`` instance."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:75
+msgid ""
+"Attempting to `get` a directory into a file-like object is not valid and "
+"will result in an error."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:79
+msgid ""
+"This function will use ``seek`` and ``tell`` to overwrite the entire "
+"contents of the file-like object, in order to be consistent with the "
+"behavior of `~fabric.operations.put` (which also considers the entire file)."
+" However, unlike `~fabric.operations.put`, the file pointer will not be "
+"restored to its previous location, as that doesn't make as much sense here "
+"and/or may not even be possible."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:87
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:63
+msgid ""
+"If a file-like object such as StringIO has a ``name`` attribute, that will "
+"be used in Fabric's printed output instead of the default ``<file obj>``"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:91
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:66
+msgid ""
+"Now honors the remote working directory as manipulated by "
+"`~fabric.context_managers.cd`, and the local working directory as "
+"manipulated by `~fabric.context_managers.lcd`."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:95
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:70
+msgid "Now allows file-like objects in the ``local_path`` argument."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:97
+msgid ""
+"``local_path`` may now contain interpolated path- and host-related "
+"variables."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:100
+msgid ""
+"Directories may be specified in the ``remote_path`` argument and will "
+"trigger recursive downloads."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:103
+msgid ""
+"Return value is now an iterable of downloaded local file paths, which also "
+"exhibits the ``.failed`` and ``.succeeded`` attributes."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.get:106
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:78
+msgid "Allow a ``name`` attribute on file-like objects for log output"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.local:1
+msgid "Run a command on the local system."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.local:3
+msgid ""
+"`local` is simply a convenience wrapper around the use of the builtin Python"
+" ``subprocess`` module with ``shell=True`` activated. If you need to do "
+"anything special, consider using the ``subprocess`` module directly."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.local:7
+msgid ""
+"``shell`` is passed directly to `subprocess.Popen "
+"<http://docs.python.org/library/subprocess.html#subprocess.Popen>`_'s "
+"``execute`` argument (which determines the local shell to use.)  As per the "
+"linked documentation, on Unix the default behavior is to use ``/bin/sh``, so"
+" this option is useful for setting that value to e.g.  ``/bin/bash``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.local:13
+msgid ""
+"`local` is not currently capable of simultaneously printing and capturing "
+"output, as `~fabric.operations.run`/`~fabric.operations.sudo` do. The "
+"``capture`` kwarg allows you to switch between printing and capturing as "
+"necessary, and defaults to ``False``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.local:18
+msgid ""
+"When ``capture=False``, the local subprocess' stdout and stderr streams are "
+"hooked up directly to your terminal, though you may use the global "
+":doc:`output controls </usage/output_controls>` ``output.stdout`` and "
+"``output.stderr`` to hide one or both if desired. In this mode, the return "
+"value's stdout/stderr values are always empty."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.local:24
+msgid ""
+"When ``capture=True``, you will not see any output from the subprocess in "
+"your terminal, but the return value will contain the captured stdout/stderr."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.local:28
+msgid ""
+"In either case, as with `~fabric.operations.run` and "
+"`~fabric.operations.sudo`, this return value exhibits the ``return_code``, "
+"``stderr``, ``failed``, ``succeeded``, ``command`` and ``real_command`` "
+"attributes. See `run` for details."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.local:33
+msgid ""
+"`~fabric.operations.local` will honor the `~fabric.context_managers.lcd` "
+"context manager, allowing you to control its current working directory "
+"independently of the remote end (which honors "
+"`~fabric.context_managers.cd`)."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.local:38
+msgid "Added the ``succeeded`` and ``stderr`` attributes."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.local:40
+msgid "Now honors the `~fabric.context_managers.lcd` context manager."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.local:42
+msgid "Changed the default value of ``capture`` from ``True`` to ``False``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.local:44
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:81
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.sudo:36
+msgid "The return value attributes ``.command`` and ``.real_command``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.open_shell:1
+msgid "Invoke a fully interactive shell on the remote end."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.open_shell:3
+msgid ""
+"If ``command`` is given, it will be sent down the pipe before handing "
+"control over to the invoking user."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.open_shell:6
+msgid ""
+"This function is most useful for when you need to interact with a heavily "
+"shell-based command or series of commands, such as when debugging or when "
+"fully interactive recovery is required upon remote program failure."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.open_shell:10
+msgid ""
+"It should be considered an easy way to work an interactive shell session "
+"into the middle of a Fabric script and is *not* a drop-in replacement for "
+"`~fabric.operations.run`, which is also capable of interacting with the "
+"remote end (albeit only while its given command is executing) and has much "
+"stronger programmatic abilities such as error handling and stdout/stderr "
+"capture."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.open_shell:17
+msgid ""
+"Specifically, `~fabric.operations.open_shell` provides a better interactive "
+"experience than `~fabric.operations.run`, but use of a full remote shell "
+"prevents Fabric from determining whether programs run within the shell have "
+"failed, and pollutes the stdout/stderr stream with shell output such as "
+"login banners, prompts and echoed stdin."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.open_shell:23
+msgid ""
+"Thus, this function does not have a return value and will not trigger "
+"Fabric's failure handling if any remote programs result in errors."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.prompt:1
+msgid "Prompt user with ``text`` and return the input (like ``raw_input``)."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.prompt:3
+msgid ""
+"A single space character will be appended for convenience, but nothing else."
+" Thus, you may want to end your prompt text with a question mark or a colon,"
+" e.g. ``prompt(\"What hostname?\")``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.prompt:7
+msgid ""
+"If ``key`` is given, the user's input will be stored as ``env.<key>`` in "
+"addition to being returned by `prompt`. If the key already existed in "
+"``env``, its value will be overwritten and a warning printed to the user."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.prompt:11
+msgid ""
+"If ``default`` is given, it is displayed in square brackets and used if the "
+"user enters nothing (i.e. presses Enter without entering any text). "
+"``default`` defaults to the empty string. If non-empty, a space will be "
+"appended, so that a call such as ``prompt(\"What hostname?\", "
+"default=\"foo\")`` would result in a prompt of ``What hostname? [foo]`` "
+"(with a trailing space after the ``[foo]``.)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.prompt:18
+msgid ""
+"The optional keyword argument ``validate`` may be a callable or a string:"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.prompt:20
+msgid ""
+"If a callable, it is called with the user's input, and should return the "
+"value to be stored on success. On failure, it should raise an exception with"
+" an exception message, which will be printed to the user."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.prompt:23
+msgid ""
+"If a string, the value passed to ``validate`` is used as a regular "
+"expression. It is thus recommended to use raw strings in this case. Note "
+"that the regular expression, if it is not fully matching (bounded by ``^`` "
+"and ``$``) it will be made so. In other words, the input must fully match "
+"the regex."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.prompt:29
+msgid ""
+"Either way, `prompt` will re-prompt until validation passes (or the user "
+"hits ``Ctrl-C``)."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.prompt:33
+msgid ""
+"`~fabric.operations.prompt` honors :ref:`env.abort_on_prompts <abort-on-"
+"prompts>` and will call `~fabric.utils.abort` instead of prompting if that "
+"flag is set to ``True``. If you want to block on user input regardless, try "
+"wrapping with `~fabric.context_managers.settings`."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.prompt:39
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:56
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:59
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.sudo:18
+msgid "Examples::"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:1
+msgid "Upload one or more files to a remote host."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:3
+msgid ""
+"`~fabric.operations.put` returns an iterable containing the absolute file "
+"paths of all remote files uploaded. This iterable also exhibits a "
+"``.failed`` attribute containing any local file paths which failed to upload"
+" (and may thus be used as a boolean test.) You may also check ``.succeeded``"
+" which is equivalent to ``not .failed``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:9
+msgid ""
+"``local_path`` may be a relative or absolute local file or directory path, "
+"and may contain shell-style wildcards, as understood by the Python ``glob`` "
+"module (give ``use_glob=False`` to disable this behavior).  Tilde expansion "
+"(as implemented by ``os.path.expanduser``) is also performed."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:14
+msgid ""
+"``local_path`` may alternately be a file-like object, such as the result of "
+"``open('path')`` or a ``StringIO`` instance."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:18
+msgid ""
+"In this case, `~fabric.operations.put` will attempt to read the entire "
+"contents of the file-like object by rewinding it using ``seek`` (and will "
+"use ``tell`` afterwards to preserve the previous file position)."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:22
+msgid ""
+"``remote_path`` may also be a relative or absolute location, but applied to "
+"the remote host. Relative paths are relative to the remote user's home "
+"directory, but tilde expansion (e.g. ``~/.ssh/``) will also be performed if "
+"necessary."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:27
+msgid ""
+"An empty string, in either path argument, will be replaced by the "
+"appropriate end's current working directory."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:30
+msgid ""
+"While the SFTP protocol (which `put` uses) has no direct ability to upload "
+"files to locations not owned by the connecting user, you may specify "
+"``use_sudo=True`` to work around this. When set, this setting causes `put` "
+"to upload the local files to a temporary location on the remote end "
+"(defaults to remote user's ``$HOME``; this may be overridden via "
+"``temp_dir``), and then use `sudo` to move them to ``remote_path``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:37
+msgid ""
+"In some use cases, it is desirable to force a newly uploaded file to match "
+"the mode of its local counterpart (such as when uploading executable "
+"scripts). To do this, specify ``mirror_local_mode=True``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:41
+msgid ""
+"Alternately, you may use the ``mode`` kwarg to specify an exact mode, in the"
+" same vein as ``os.chmod`` or the Unix ``chmod`` command."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:44
+msgid ""
+"`~fabric.operations.put` will honor `~fabric.context_managers.cd`, so "
+"relative values in ``remote_path`` will be prepended by the current remote "
+"working directory, if applicable. Thus, for example, the below snippet would"
+" attempt to upload to ``/tmp/files/test.txt`` instead of "
+"``~/files/test.txt``::"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:53
+msgid ""
+"Use of `~fabric.context_managers.lcd` will affect ``local_path`` in the same"
+" manner."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:72
+msgid ""
+"Directories may be specified in the ``local_path`` argument and will trigger"
+" recursive uploads."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:75
+msgid ""
+"Return value is now an iterable of uploaded remote file paths which also "
+"exhibits the ``.failed`` and ``.succeeded`` attributes."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.put:80
+msgid "Added ``use_glob`` option to allow disabling of globbing."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.reboot:1
+msgid "Reboot the remote system."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.reboot:3
+msgid ""
+"Will temporarily tweak Fabric's reconnection settings (:ref:`timeout` and "
+":ref:`connection-attempts`) to ensure that reconnection does not give up for"
+" at least ``wait`` seconds."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.reboot:8
+msgid ""
+"As of Fabric 1.4, the ability to reconnect partway through a session no "
+"longer requires use of internal APIs.  While we are not officially "
+"deprecating this function, adding more features to it will not be a "
+"priority."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.reboot:13
+msgid ""
+"Users who want greater control are encouraged to check out this function's "
+"(6 lines long, well commented) source code and write their own adaptation "
+"using different timeout/attempt values or additional logic."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.reboot:19
+msgid ""
+"Changed the ``wait`` kwarg to be optional, and refactored to leverage the "
+"new reconnection functionality; it may not actually have to wait for "
+"``wait`` seconds before reconnecting."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.require:1
+msgid ""
+"Check for given keys in the shared environment dict and abort if not found."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.require:3
+msgid ""
+"Positional arguments should be strings signifying what env vars should be "
+"checked for. If any of the given arguments do not exist, Fabric will abort "
+"execution and print the names of the missing keys."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.require:7
+msgid ""
+"The optional keyword argument ``used_for`` may be a string, which will be "
+"printed in the error output to inform users why this requirement is in "
+"place. ``used_for`` is printed as part of a string similar to::"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.require:13
+msgid "so format it appropriately."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.require:15
+msgid ""
+"The optional keyword argument ``provided_by`` may be a list of functions or "
+"function names or a single function or function name which the user should "
+"be able to execute in order to set the key or keys; it will be included in "
+"the error output if requirements are not met."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.require:20
+msgid ""
+"Note: it is assumed that the keyword arguments apply to all given keys as a "
+"group. If you feel the need to specify more than one ``used_for``, for "
+"example, you should break your logic into multiple calls to ``require()``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.require:24
+msgid "Allow iterable ``provided_by`` values instead of just single values."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:1
+msgid "Run a shell command on a remote host."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:3
+msgid ""
+"If ``shell`` is True (the default), `run` will execute the given command "
+"string via a shell interpreter, the value of which may be controlled by "
+"setting ``env.shell`` (defaulting to something similar to ``/bin/bash -l -c "
+"\"<command>\"``.) Any double-quote (``\"``) or dollar-sign (``$``) "
+"characters in ``command`` will be automatically escaped when ``shell`` is "
+"True."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:9
+msgid ""
+"`run` will return the result of the remote program's stdout as a single "
+"(likely multiline) string. This string will exhibit ``failed`` and "
+"``succeeded`` boolean attributes specifying whether the command failed or "
+"succeeded, and will also include the return code as the ``return_code`` "
+"attribute. Furthermore, it includes a copy of the requested & actual command"
+" strings executed, as ``.command`` and ``.real_command``, respectively."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:17
+msgid ""
+"Any text entered in your local terminal will be forwarded to the remote "
+"program as it runs, thus allowing you to interact with password or other "
+"prompts naturally. For more on how this works, see "
+":doc:`/usage/interactivity`."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:22
+msgid ""
+"You may pass ``pty=False`` to forego creation of a pseudo-terminal on the "
+"remote end in case the presence of one causes problems for the command in "
+"question. However, this will force Fabric itself to echo any  and all input "
+"you type while the command is running, including sensitive passwords. (With "
+"``pty=True``, the remote pseudo-terminal will echo for you, and will "
+"intelligently handle password-style prompts.) See :ref:`pseudottys` for "
+"details."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:30
+msgid ""
+"Similarly, if you need to programmatically examine the stderr stream of the "
+"remote program (exhibited as the ``stderr`` attribute on this function's "
+"return value), you may set ``combine_stderr=False``. Doing so has a high "
+"chance of causing garbled output to appear on your terminal (though the "
+"resulting strings returned by `~fabric.operations.run` will be properly "
+"separated). For more info, please read :ref:`combine_streams`."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:37
+msgid ""
+"To ignore non-zero return codes, specify ``warn_only=True``. To both ignore "
+"non-zero return codes *and* force a command to run silently, specify "
+"``quiet=True``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:41
+msgid ""
+"To override which local streams are used to display remote stdout and/or "
+"stderr, specify ``stdout`` or ``stderr``. (By default, the regular "
+"``sys.stdout`` and ``sys.stderr`` Python stream objects are used.)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:45
+msgid ""
+"For example, ``run(\"command\", stderr=sys.stdout)`` would print the remote "
+"standard error to the local standard out, while preserving it as its own "
+"distinct attribute on the return value (as per above.) Alternately, you "
+"could even provide your own stream objects or loggers, e.g. ``myout = "
+"StringIO(); run(\"command\", stdout=myout)``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:51
+msgid ""
+"If you want an exception raised when the remote program takes too long to "
+"run, specify ``timeout=N`` where ``N`` is an integer number of seconds, "
+"after which to time out. This will cause ``run`` to raise a "
+"`~fabric.exceptions.CommandTimeout` exception."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:56
+msgid ""
+"If you want to disable Fabric's automatic attempts at escaping quotes, "
+"dollar signs etc., specify ``shell_escape=False``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:66
+msgid ""
+"The ``succeeded`` and ``stderr`` return value attributes, the "
+"``combine_stderr`` kwarg, and interactive behavior."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:70
+msgid "The default value of ``pty`` is now ``True``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:73
+msgid ""
+"The default value of ``combine_stderr`` is now ``None`` instead of ``True``."
+" However, the default *behavior* is unchanged, as the global setting is "
+"still ``True``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:78
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.sudo:33
+msgid "The ``quiet``, ``warn_only``, ``stdout`` and ``stderr`` kwargs."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:84
+msgid "The ``timeout`` argument."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.run:87
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.sudo:39
+msgid "The ``shell_escape`` argument."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.sudo:1
+msgid "Run a shell command on a remote host, with superuser privileges."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.sudo:3
+msgid ""
+"`sudo` is identical in every way to `run`, except that it will always wrap "
+"the given ``command`` in a call to the ``sudo`` program to provide superuser"
+" privileges."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.sudo:7
+msgid ""
+"`sudo` accepts additional ``user`` and ``group`` arguments, which are passed"
+" to ``sudo`` and allow you to run as some user and/or group other than root."
+"  On most systems, the ``sudo`` program can take a string username/group or "
+"an integer userid/groupid (uid/gid); ``user`` and ``group`` may likewise be "
+"strings or integers."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.sudo:13
+msgid ""
+"You may set :ref:`env.sudo_user <sudo_user>` at module level or via "
+"`~fabric.context_managers.settings` if you want multiple ``sudo`` calls to "
+"have the same ``user`` value. An explicit ``user`` argument will, of course,"
+" override this global setting."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.sudo:27
+msgid "See the changed and added notes for `~fabric.operations.run`."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
+#: of fabric.operations.sudo:30
+msgid "Now honors :ref:`env.sudo_user <sudo_user>`."
+msgstr ""

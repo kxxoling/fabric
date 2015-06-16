@@ -1,0 +1,102 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-16 16:34+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../running_tests.rst:3
+msgid "Running Fabric's Tests"
+msgstr "运行 Fabric 的测试"
+
+#: ../running_tests.rst:5
+msgid ""
+"Fabric is maintained with 100% passing tests. Where possible, patches should"
+" include tests covering the changes, making things far easier to verify & "
+"merge."
+msgstr ""
+"Fabric 保持着 100% 的测试通过率，提交的补丁也应该尽可能包括相应的测试，"
+"以便于检验 & 合并。"
+
+#: ../running_tests.rst:8
+msgid ""
+"When developing on Fabric, it works best to establish a `virtualenv`_ to "
+"install the dependencies in isolation for running tests."
+msgstr ""
+"开发 Fabric 时，最好建立一个独立的 `virtualenv`_ 环境来安装依赖并运行测试。"
+
+#: ../running_tests.rst:16
+msgid "First-time Setup"
+msgstr "初次设置"
+
+#: ../running_tests.rst:18
+msgid "Fork the `repository`_ on GitHub"
+msgstr "在 GitHub 上 fork `repository`_ "
+
+#: ../running_tests.rst:19
+msgid ""
+"Clone your new fork (e.g. ``git clone "
+"git@github.com:<your_username>/fabric.git``)"
+msgstr ""
+"把你 fork 出来的代码库 clone 到本地（例如：  ``git clone "
+"git@github.com:<your_username>/fabric.git``)"
+
+#: ../running_tests.rst:21
+msgid "``cd fabric``"
+msgstr ""
+
+#: ../running_tests.rst:22
+msgid "``virtualenv env``"
+msgstr ""
+
+#: ../running_tests.rst:23
+msgid "``. env/bin/activate``"
+msgstr ""
+
+#: ../running_tests.rst:24
+msgid "``pip install -r requirements.txt``"
+msgstr ""
+
+#: ../running_tests.rst:25
+msgid "``python setup.py develop``"
+msgstr ""
+
+#: ../running_tests.rst:32
+msgid "Running Tests"
+msgstr "运行测试"
+
+#: ../running_tests.rst:34
+msgid ""
+"Once your virtualenv is activated (``. env/bin/activate``) & you have the "
+"latest requirements, running tests is just::"
+msgstr ""
+"激活 virtualenv（ ``. env/bin/activate`` ）并安装好依赖后可以这样运行测试： ::"
+
+#: ../running_tests.rst:39
+msgid ""
+"You should **always** run tests on ``master`` (or the release branch you're "
+"working with) to ensure they're passing before working on your own "
+"changes/tests."
+msgstr ""
+"你需要在 ``master`` （或者正处理的 release 分支）运行测试，来保证自己的修改/测试没有问题。"
+
+#: ../running_tests.rst:43
+msgid ""
+"Alternatively, if you've run ``python setup.py develop`` on your Fabric "
+"clone, you can also run::"
+msgstr ""
+"如果你已经在 Fabric 代码库中运行过 ``python setup.py develop`` ，"
+"也可以执行： ::"
+
+#: ../running_tests.rst:48
+msgid ""
+"This adds additional flags which enable running doctests & adds nice "
+"coloration."
+msgstr ""
+"它会额外执行 doctest，并提供彩色输出结果。"

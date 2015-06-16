@@ -1,0 +1,248 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-16 16:34+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../api/core/network.rst:3
+msgid "Network"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network:1
+msgid "Classes and subroutines dealing with network connections and related topics."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.disconnect_all:1
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.disconnect_all:1
+msgid "Disconnect from all currently connected servers."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.disconnect_all:3
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.disconnect_all:3
+msgid "Used at the end of ``fab``'s main loop, and also intended for use by library users."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.HostConnectionCache:1
+msgid "Dict subclass allowing for caching of host connections/clients."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.HostConnectionCache:3
+msgid "This subclass will intelligently create new client connections when keys are requested, or return previously created connections instead."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.HostConnectionCache:6
+msgid "It also handles creating new socket-like objects when required to implement gateway connections and `ProxyCommand`, and handing them to the inner connection methods."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.HostConnectionCache:10
+msgid "Key values are the same as host specifiers throughout Fabric: optional username + ``@``, mandatory hostname, optional ``:`` + port number. Examples:"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.HostConnectionCache:14
+msgid "``example.com`` - typical Internet host address."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.HostConnectionCache:15
+msgid "``firewall`` - atypical, but still legal, local host address."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.HostConnectionCache:16
+msgid "``user@example.com`` - with specific username attached."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.HostConnectionCache:17
+msgid "``bob@smith.org:222`` - with specific nonstandard port attached."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.HostConnectionCache:19
+msgid "When the username is not given, ``env.user`` is used. ``env.user`` defaults to the currently running user at startup but may be overwritten by user code or by specifying a command-line flag."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.HostConnectionCache:23
+msgid "Note that differing explicit usernames for the same hostname will result in multiple client connections being made. For example, specifying ``user1@example.com`` will create a connection to ``example.com``, logged in as ``user1``; later specifying ``user2@example.com`` will create a new, 2nd connection as ``user2``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.HostConnectionCache:29
+msgid "The same applies to ports: specifying two different ports will result in two different connections to the same host being made. If no port is given, 22 is assumed, so ``example.com`` is equivalent to ``example.com:22``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.HostConnectionCache.__getitem__:1
+msgid "Autoconnect + return connection object"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.HostConnectionCache.__weakref__:1
+msgid "list of weak references to the object (if defined)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.HostConnectionCache.connect:1
+msgid "Force a new connection to ``key`` host string."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.connect:1
+msgid "Create and return a new SSHClient instance connected to given host."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.connect:3
+msgid "Username to connect as."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.connect:5
+msgid "Network hostname."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.connect:7
+msgid "SSH daemon port."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.connect:9
+msgid "A ``HostConnectionCache`` instance used to cache/store gateway hosts when gatewaying is enabled."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.connect:13
+msgid "Whether to try setting up a gateway socket for this connection. Used so the actual gateway connection can prevent recursion."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.denormalize:1
+msgid "Strips out default values for the given host string."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.denormalize:3
+msgid "If the user part is the default user, it is removed; if the port is port 22, it also is removed."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.get_gateway:1
+msgid "Create and return a gateway socket, if one is needed."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.get_gateway:3
+msgid "This function checks ``env`` for gateway or proxy-command settings and returns the necessary socket-like object for use by a final host connection."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.get_gateway:7
+msgid "Hostname of target server."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.get_gateway:10
+msgid "Port to connect to on target server."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.get_gateway:13
+msgid "A ``HostConnectionCache`` object, in which gateway ``SSHClient`` objects are to be retrieved/cached."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.get_gateway:17
+msgid "Whether to forcibly replace a cached gateway client object."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.get_gateway:20
+msgid "A ``socket.socket``-like object, or ``None`` if none was created."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.join_host_strings:1
+msgid "Turns user/host/port strings into ``user@host:port`` combined string."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.join_host_strings:3
+msgid "This function is not responsible for handling missing user/port strings; for that, see the ``normalize`` function."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.join_host_strings:6
+msgid "If ``host`` looks like IPv6 address, it will be enclosed in square brackets"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.join_host_strings:8
+msgid "If ``port`` is omitted, the returned string will be of the form ``user@host``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.key_filenames:1
+msgid "Returns list of SSH key filenames for the current env.host_string."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.key_filenames:3
+msgid "Takes into account ssh_config and env.key_filename, including normalization to a list. Also performs ``os.path.expanduser`` expansion on any key filenames."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.key_from_env:1
+msgid "Returns a paramiko-ready key from a text string of a private key"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.needs_host:1
+msgid "Prompt user for value of ``env.host_string`` when ``env.host_string`` is empty."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.needs_host:4
+msgid "This decorator is basically a safety net for silly users who forgot to specify the host/host list in one way or another. It should be used to wrap operations which require a network connection."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.needs_host:8
+msgid "Due to how we execute commands per-host in ``main()``, it's not possible to specify multiple hosts at this point in time, so only a single host will be prompted for."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.needs_host:12
+msgid "Because this decorator sets ``env.host_string``, it will prompt once (and only once) per command. As ``main()`` clears ``env.host_string`` between commands, this decorator will also end up prompting the user once per command (in the case where multiple commands have no hosts set, of course.)"
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.normalize:1
+msgid "Normalizes a given host string, returning explicit host, user, port."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.normalize:3
+msgid "If ``omit_port`` is given and is True, only the host and user are returned."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.normalize:5
+msgid "This function will process SSH config files if Fabric is configured to do so, and will use them to fill in some default values or swap in hostname aliases."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.normalize_to_string:1
+msgid "normalize() returns a tuple; this returns another valid host string."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.prompt_for_password:1
+msgid "Prompts for and returns a new password if required; otherwise, returns None."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.prompt_for_password:4
+msgid "A trailing colon is appended unless ``no_colon`` is True."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.prompt_for_password:6
+msgid "If the user supplies an empty password, the user will be re-prompted until they enter a non-empty password."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.prompt_for_password:9
+msgid "``prompt_for_password`` autogenerates the user prompt based on the current host being connected to. To override this, specify a string value for ``prompt``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.prompt_for_password:13
+msgid "``stream`` is the stream the prompt will be printed to; if not given, defaults to ``sys.stderr``."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.ssh_config:1
+msgid "Return ssh configuration dict for current env.host_string host value."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.ssh_config:3
+msgid "Memoizes the loaded SSH config file, but not the specific per-host results."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.ssh_config:5
+msgid "This function performs the necessary \"is SSH config enabled?\" checks and will simply return an empty dict if not. If SSH config *is* enabled and the value of env.ssh_config_path is not a valid file, it will abort."
+msgstr ""
+
+#: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/network.py:docstring of fabric.network.ssh_config:9
+msgid "May give an explicit host string as ``host_string``."
+msgstr ""
+
