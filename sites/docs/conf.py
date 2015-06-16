@@ -26,3 +26,9 @@ intersphinx_mapping = {
 html_theme_options['extra_nav_links'] = {
     "Main website": 'http://www.fabfile.org',
 }
+
+locale_dirs = ['locale/']
+gettext_compact = False
+exclude_patterns = ['_build']
+source_suffix = '.rst'
+
