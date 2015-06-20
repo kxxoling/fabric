@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric\n"
@@ -20,13 +20,13 @@ msgstr "实用工具"
 msgid ""
 "Internal subroutines for e.g. aborting execution with an error message, or "
 "performing indenting on multiline output."
-msgstr ""
+msgstr "内部的实用小程序。；例如：遇到错误信息后终止执行，或者对多行输出进行缩进处理。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.abort:1
 msgid ""
 "Abort execution, print ``msg`` to stderr and exit with error status (1.)"
-msgstr ""
+msgstr "终止执行，向 stderr 输入错误信息 ``msg`` 并退出（错误状态 1）。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.abort:3
@@ -35,11 +35,13 @@ msgid ""
 "`SystemExit`_. Therefore, it's possible to detect and recover from inner "
 "calls to `abort` by using ``except SystemExit`` or similar."
 msgstr ""
+"本函数目前通过调用 `sys.exit`_ 来触发 `SystemExit`_ ，因此可以通过使用 "
+"``except SystemExit`` 这样的方法，检测并在内部调用中恢复至 `abort` 状态。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.error:1
 msgid "Call ``func`` with given error ``message``."
-msgstr ""
+msgstr "给定错误信息 ``message`` 以调用 ``func`` 。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.error:3
@@ -47,6 +49,7 @@ msgid ""
 "If ``func`` is None (the default), the value of ``env.warn_only`` determines"
 " whether to call ``abort`` or ``warn``."
 msgstr ""
+"如果 ``func`` 为 ``None`` ，将根据 ``env.warn_only`` 来调用 ``abort`` 还是 ``warn`` 。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.error:6
@@ -54,6 +57,7 @@ msgid ""
 "If ``exception`` is given, it is inspected to get a string message, which is"
 " printed alongside the user-generated ``message``."
 msgstr ""
+"如果 `exception`` 参数（应当是字符串类型）存在，将会在用户传入的 ``message`` 周围输出它。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.error:9
@@ -61,11 +65,12 @@ msgid ""
 "If ``stdout`` and/or ``stderr`` are given, they are assumed to be strings to"
 " be printed."
 msgstr ""
+"如果指定了 ``stdin`` 和/或者 ``stderr`` ，将作为打印输出的终端。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.fastprint:1
 msgid "Print ``text`` immediately, without any prefix or line ending."
-msgstr ""
+msgstr "立即打印 ``text`` 不添加任何前缀或后缀。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.fastprint:3
@@ -74,6 +79,8 @@ msgid ""
 "default argument values, such that the ``text`` is printed without any "
 "embellishment and immediately flushed."
 msgstr ""
+"该函数只是 `~fabric.utils.puts` 的别名，区别在参数的迷默认值不同， ``text`` "
+"将会不加任何装饰地输出出去。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.fastprint:7
@@ -84,6 +91,10 @@ msgid ""
 "require a lack of line endings (such as printing a series of dots to signify"
 " progress) it also omits the traditional newline by default."
 msgstr ""
+"当你想要输出可能被 Python 输出所缓冲（比如在计算密集的 ``for`` 循环中）时会很需要它。"
+"Since such use cases typically also "
+"require a lack of line endings (such as printing a series of dots to signify"
+" progress) it also omits the traditional newline by default."
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.fastprint:15
@@ -91,6 +102,8 @@ msgid ""
 "Since `~fabric.utils.fastprint` calls `~fabric.utils.puts`, it is likewise "
 "subject to the ``user`` :doc:`output level </usage/output_controls>`."
 msgstr ""
+"由于 `~fabric.utils.fastprint` 会调用 `~fabric.utils.puts` ，因此其"
+" :doc:`output level </usage/output_controls>` 也取决于 ``user`` 。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.fastprint:20
@@ -100,14 +113,14 @@ msgstr ""
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.indent:1
 msgid "Return ``text`` indented by the given number of spaces."
-msgstr ""
+msgstr "根据给定空格数缩进 ``text`` 。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.indent:3
 msgid ""
 "If text is not a string, it is assumed to be a list of lines and will be "
 "joined by ``\\n`` prior to indenting."
-msgstr ""
+msgstr "如果 ``text`` 并非字符串，将被当作单行输出的列表，并使用 ``\\n`` 连接、排列。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.indent:6
@@ -117,22 +130,26 @@ msgid ""
 "preserved, but otherwise things are left-stripped). This allows you to "
 "effectively \"normalize\" any previous indentation for some inputs."
 msgstr ""
+"若 ``strip`` 为 ``True`` ，a minimum amount of whitespace is removed from "
+"the left-hand side of the given string (so that relative indents are "
+"preserved, but otherwise things are left-stripped). "
+"这样你就能有效地“规范化”某些输出前的缩进。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.isatty:1
 msgid "Check if a stream is a tty."
-msgstr ""
+msgstr "检查输入输出流是否是 tty。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.isatty:3
 msgid "Not all file-like objects implement the `isatty` method."
-msgstr ""
+msgstr "并非所有类文件对象都实现了 `isatty` 方法。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.puts:1
 msgid ""
 "An alias for ``print`` whose output is managed by Fabric's output controls."
-msgstr ""
+msgstr "``print`` 函数的别名，同样受 Fabric 管理输出。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.puts:3
@@ -141,6 +158,8 @@ msgid ""
 " its output if the ``user`` :doc:`output level </usage/output_controls>` is "
 "set to ``False``."
 msgstr ""
+"换句话说，这个函数只是简单地将输出指向 ``sys.stdout` ，如果``user`` 将 "
+":doc:`output level </usage/output_controls>` 设置为 False 则隐藏输出。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.puts:7
@@ -149,6 +168,8 @@ msgid ""
 "it tacks on by default. (It will also omit this prefix if "
 "``env.host_string`` is empty.)"
 msgstr ""
+"如果 ``show_prefix=False`` ， `puts` 将略过默认添加的输出头 ``[hostname]`` 。"
+"（如果 ``env.host_string`` 为空的话也能起到同样的效果。）"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.puts:11
@@ -156,13 +177,14 @@ msgid ""
 "Newlines may be disabled by setting ``end`` to the empty string (``''``). "
 "(This intentionally mirrors Python 3's ``print`` syntax.)"
 msgstr ""
+"设置 ``end`` 为空字符串 ``''`` 将不会在末尾输出换行。（）"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.puts:14
 msgid ""
 "You may force output flushing (e.g. to bypass output buffering) by setting "
 "``flush=True``."
-msgstr ""
+msgstr "你可以通过设置 ``flush=True`` 来强制立即输出（例如绕过输出缓冲）。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.puts:18
@@ -172,7 +194,7 @@ msgstr ""
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.warn:1
 msgid "Print warning message, but do not abort execution."
-msgstr ""
+msgstr "打印警告信息，但不退出执行。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/utils.pydocstring
 #: of fabric.utils.warn:3
@@ -182,3 +204,5 @@ msgid ""
 "provided that the ``warnings`` output level (which is active by default) is "
 "turned on."
 msgstr ""
+"该函数遵循 Fabric :doc:`output controls <../../usage/output_controls>` "
+"如果已开启 ``warnings`` 等级（默认开启），将会向 stderr 打印 ``msg`` 。"
