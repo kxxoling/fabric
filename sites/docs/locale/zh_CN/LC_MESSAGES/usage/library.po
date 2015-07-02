@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric\n"
@@ -22,6 +22,9 @@ msgid ""
 "internals are written in such a manner as to be easily used without ``fab`` "
 "or fabfiles at all -- this document will show you how."
 msgstr ""
+"从文档中我们可以看出，Fabric 最主要的应用场景是通过 :doc:`fab </usage/fab>` "
+"命令来引用 fabfile ，然而 Fabric 的内部实现在保证它在不使用 ``fab`` 和 fabfile "
+"的场合也非常易于使用——本文档将会详细向你介绍。"
 
 #: ../usage/library.rst:10
 msgid ""
@@ -29,10 +32,12 @@ msgid ""
 "compared to writing a fabfile and using ``fab`` to run it: how connections "
 "are really made, and how disconnections occur."
 msgstr ""
+"此外还有写需要时刻谨记的事情，比如：编写好 fabfile ，运行 ``fab`` 命令时是怎样创建"
+"并断开连接的。"
 
 #: ../usage/library.rst:15
 msgid "Connections"
-msgstr ""
+msgstr "连接服务器"
 
 #: ../usage/library.rst:17
 msgid ""
@@ -42,6 +47,9 @@ msgid ""
 ":ref:`connections` section and read it real quick. (You should really give "
 "that entire document a once-over, but it's not absolutely required.)"
 msgstr ""
+"前面我们已经介绍过 Fabric 是怎样连接主机的，不过仍有些知识埋藏在 :doc:`运行 "
+"</usage/execution>` 文档中，具体来说你可能需要快速浏览一遍 :ref:`connections` "
+"章节的文档。（虽然不必要，但我强烈建议你把整个文档都快速浏览一遍。）"
 
 #: ../usage/library.rst:23
 msgid ""
@@ -51,6 +59,9 @@ msgid ""
 "mechanisms for setting hosts are interpreted by the ``fab`` tool when it "
 "runs, and don't matter when running as a library."
 msgstr ""
+"如那些章节中所提到的， `~fabric.operations.run` 和 `~fabric.operations.sudo` 这样的操作"
+"在连接时都会查看同一处设置： :ref:`env.host_string <host_string>` 。其它设置主机列表的机制"
+"都用于 ``fab`` 命令，和作为 Python 库使用没有关系。"
 
 #: ../usage/library.rst:29
 msgid ""
@@ -60,10 +71,14 @@ msgid ""
 "`~fabric.tasks.execute`'s documentation for details -- manual host string "
 "manipulation should be rarely necessary."
 msgstr ""
+"也就是说，在 Fabric 1.3 中，如果你想要结合任务 ``X`` 和主机列表 ``Y`` ，可以使用 "
+"`~fabric.tasks.execute` ，就像这样： ``execute(X, hosts=Y)`` ，详细介绍请访问 "
+"`~fabric.tasks.execute` 文档——手动操作主机列表功能真的很有必要。"
+
 
 #: ../usage/library.rst:32
 msgid "Disconnecting"
-msgstr ""
+msgstr "断开连接"
 
 #: ../usage/library.rst:34
 msgid ""
@@ -71,6 +86,8 @@ msgid ""
 "hosts at the end of a session; otherwise, Python will sit around forever "
 "waiting for those network resources to be released."
 msgstr ""
+"``fab`` 所做另一件重要的事是，会在会话结束的时候断开所有连接，否则 Python 程序将"
+"永远等待网络资源的释放。"
 
 #: ../usage/library.rst:38
 msgid ""
@@ -80,16 +97,21 @@ msgid ""
 "finally`` statement -- lest errors in your code prevent disconnections from "
 "happening!) and things ought to work pretty well."
 msgstr ""
+"在 Fabric 0.9.4 或更新版本中，你可以使用这个函数方便地实现这个功能： "
+" `~fabric.network.disconnect_all` ，只需要保证程序结束的时候调用该方法（通常在 "
+"``try: finally`` 表达式中，以防意外的错误导致无法释放连接）即可。"
 
 #: ../usage/library.rst:44
 msgid ""
 "If you're on Fabric 0.9.3 or older, you can simply do this "
 "(``disconnect_all`` just adds a bit of nice output to this logic)::"
 msgstr ""
+"如果你使用的是 Fabric 0.9.3 或更早之前的版本，你可以这样做"
+"（ ``disconnect_all`` 仅仅提供了更好看的输出）： ::"
 
 #: ../usage/library.rst:55
 msgid "Final note"
-msgstr ""
+msgstr "最后注意"
 
 #: ../usage/library.rst:57
 msgid ""
@@ -99,3 +121,6 @@ msgid ""
 "Fabric source code, ``fabric/main.py`` contains the bulk of the extra work "
 "done by ``fab``, and may serve as a useful reference."
 msgstr ""
+"本文档只是个草案，因此并不回详细覆盖到导入 Fabric 库与使用 ``fab`` 命令的全部区别，"
+"上面知识列出了其中最需要注意的陷阱。所以，在不确定如何使用时候，可以参考 Fabric 源代码中"
+" ``fabric/main.py`` 部分，其中 ``fab`` 命令的实现还包含了很多必要的工作。"
