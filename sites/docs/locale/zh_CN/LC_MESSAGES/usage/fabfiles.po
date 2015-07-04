@@ -20,10 +20,11 @@ msgid ""
 "This document contains miscellaneous sections about fabfiles, both how to "
 "best write them, and how to use them once written."
 msgstr ""
+"本文档介绍了 fabfile 的使用，以及各式各样的 fabfile 示例，其中不乏最佳实践和反面教材。"
 
 #: ../usage/fabfiles.rst:11
 msgid "Fabfile discovery"
-msgstr ""
+msgstr "指定 fabfile"
 
 #: ../usage/fabfiles.rst:13
 msgid ""
@@ -32,6 +33,9 @@ msgid ""
 "default, it looks for something named (to Python's import machinery) "
 "``fabfile`` - so either ``fabfile/`` or ``fabfile.py``."
 msgstr ""
+"Fabric 能够加载 Python 模块（如： ``fabfile.py`` ）和包（如 ``fabfile/`` ），"
+"默认情况下，它会根据 Python 包的导入机制加载 ``fabfile`` －可以是 ``fabfile/`` "
+"也可以是 ``fabfile.py`` 。"
 
 #: ../usage/fabfiles.rst:18
 msgid ""
@@ -41,6 +45,9 @@ msgid ""
 "source code tree. Such a fabfile will then be discovered no matter where in "
 "the tree the user invokes ``fab``."
 msgstr ""
+"根据 fabfile 的搜寻机制，Fabric 会依次查找用户当前目录以及其上层目录，因此在项目中使用时，"
+"可以把 ``fabfile.py`` 置于项目的根目录，这样无论进入项目中的任何目录时，"
+"调用 ``fab`` 命令都可以找到这个 ``fabfile`` 配置。"
 
 #: ../usage/fabfiles.rst:24
 msgid ""
@@ -51,6 +58,10 @@ msgid ""
 "``fab -f fab_tasks.py <task name>``, or add ``fabfile = fab_tasks.py`` to "
 "``~/.fabricrc``."
 msgstr ""
+"你要可以在命令行中通过 :option:`-f` 参数，或者在 :ref:`fabricrc <fabricrc>` 中"
+"指定 ``fabfile`` 文件名。例如，想要使用 ``fab_tasks.py`` 作为 fabfile 的文件名，"
+"你只需要在创建它后输入 ``fab -f fab_tasks.py <task name>`` ，或者在 "
+"``~/.fabricrc`` 中添加 ``fabfile = fab_tasks.py`` 。"
 
 #: ../usage/fabfiles.rst:31
 msgid ""
@@ -60,6 +71,10 @@ msgid ""
 " When in this mode, tilde-expansion will be applied, so one may refer to "
 "e.g. ``~/personal_fabfile.py``."
 msgstr ""
+"如果指定的 fabfile 文件名中包含了路径元素（比如： ``../fabfile.py`` 或者 "
+"``/dir1/dir2/custom_fabfile``），而不只是文件名，Fabric 将直接找到该文件，"
+"不做任何搜索。这种情况下同样接受波浪线表达式，也就是说你可以这样指定： "
+"``~/personal_fabfile.py`` 。"
 
 #: ../usage/fabfiles.rst:39
 msgid ""
@@ -69,14 +84,17 @@ msgid ""
 "fabfile's containing folder to the Python load path (and removes it "
 "immediately afterwards.)"
 msgstr ""
+"Fabric 通过 ``import`` （实际上是 ``__import__``）来获取配置文件内容——"
+"而不是 ``eval`` 或者类似的方式。它的实现方式是，将 fabfile 所在目录加入 Python "
+"的加载目录（当然之后会将它删去）。"
 
 #: ../usage/fabfiles.rst:45
 msgid "The ability to load package fabfiles."
-msgstr ""
+msgstr "支持加载 fabfile 包。"
 
 #: ../usage/fabfiles.rst:52
 msgid "Importing Fabric"
-msgstr ""
+msgstr "引用 Fabric"
 
 #: ../usage/fabfiles.rst:54
 msgid ""
@@ -85,6 +103,8 @@ msgid ""
 "make life easier for Fabric's packaging script) Fabric's public API is "
 "maintained in the ``fabric.api`` module."
 msgstr ""
+"Fabric 本质上依然是 Python，因此你 *可以* 随意地调用它的组件。不过，处于封装和便捷性"
+"（以及 Fabric 脚本的易用性）考虑，Fabric 的公开 API 由 ``fabric.api`` 模块维护。"
 
 #: ../usage/fabfiles.rst:59
 msgid ""
@@ -94,6 +114,9 @@ msgid ""
 "namespace. This enables a very simple and consistent interface to Fabric "
 "within your fabfiles::"
 msgstr ""
+"Fabric 的 :doc:`../api/core/operations` 、:doc:`../api/core/context_managers` 、 "
+":doc:`../api/core/decorators` 以及 :doc:`../api/core/utils` 都是本模块的"
+"名字空间，为 fabfile 提供了一套简单并且统一的接口。你可以像这样使用： ::"
 
 #: ../usage/fabfiles.rst:69
 msgid ""
@@ -103,18 +126,21 @@ msgid ""
 " nontrivial fabfiles, you'll be using all or most of the API, and the star "
 "import::"
 msgstr ""
+"严格来说，这样并不符合最佳实践（因为 `a number of reasons`_ ），如果你只需要使用"
+"少数几个 Fab API，*务必* 明确导入： :: ``from fabric.api import env, run`` 。"
+"但是在大多数 fabfile 中，都使用了其中大多数 API，这时 ``import *``"
 
 #: ../usage/fabfiles.rst:77
 msgid "will be a lot easier to write and read than::"
-msgstr ""
+msgstr "比下面的写法要更易于读写： ::"
 
 #: ../usage/fabfiles.rst:82
 msgid "so in this case we feel pragmatism overrides best practices."
-msgstr ""
+msgstr "在上面的例子中，相比最优范式，我们可以更加实用主义一些。"
 
 #: ../usage/fabfiles.rst:88
 msgid "Defining tasks and importing callables"
-msgstr ""
+msgstr "定义任务并导入 callable 任务"
 
 #: ../usage/fabfiles.rst:90
 msgid ""
@@ -122,3 +148,5 @@ msgid ""
 "when it loads your fabfile, as well as notes on how best to import other "
 "code, please see :doc:`/usage/tasks` in the :doc:`execution` documentation."
 msgstr ""
+"对于 Fabric 来说怎样才算是任务，以及 Fabric 何时导入 fabfile ，"
+"请阅读 :doc:`execution` 文档的 :doc:`/usage/tasks` 章节。"
