@@ -1,11 +1,11 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-06-16 16:34+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Kane Blueriver <kxxoling@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +19,7 @@ msgstr "文档助手"
 #: of fabric.docs.unwrap_tasks:1
 msgid ""
 "Replace task objects on ``module`` with their wrapped functions instead."
-msgstr ""
+msgstr "将 ``module`` 中的任务对象替换为自己封装的函数。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/docs.pydocstring
 #: of fabric.docs.unwrap_tasks:3
@@ -28,6 +28,8 @@ msgid ""
 "replace them with their ``.wrapped`` attribute (the original decorated "
 "function.)"
 msgstr ""
+"具体来说，你可以将 `~fabric.tasks.WrappedCallableTask` 的实例替换为其 ``.wrapped`` "
+"属性（原先被封装的函数）。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/docs.pydocstring
 #: of fabric.docs.unwrap_tasks:7
@@ -39,11 +41,14 @@ msgid ""
 "to access the function signature (though it is able to see e.g. "
 "``__doc__``.)"
 msgstr ""
+"它应该和 Sphinx 文档工具一起使用，使用在项目 ``conf.py`` 文件的底部，"
+"用于保证文档工具只会接触到“真正”的函数，不包括函数签名之类。通过使用 ``unwrap_tasks`` ，"
+"自动生成文档工具将不会发现文档签名（尽管任然能发现 ``__doc__`` 等）。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/docs.pydocstring
 #: of fabric.docs.unwrap_tasks:14
 msgid "For example, at the bottom of your ``conf.py``::"
-msgstr ""
+msgstr "例如，你可以在 ``conf.py`` 的底部写上： ::"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/docs.pydocstring
 #: of fabric.docs.unwrap_tasks:20
@@ -53,6 +58,8 @@ msgid ""
 " it a task?\" check so they appear to be private, which will then cause "
 "autodoc to skip over them."
 msgstr ""
+"只需要设置 ``hide_nontasks=True`` 就可以 *隐藏* 所有非任务函数，它保证所有这些对象"
+"不会被识别为任务，因此会被当作是私有的，Sphinx 自动生成文档时也会将其略过。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/docs.pydocstring
 #: of fabric.docs.unwrap_tasks:25
@@ -60,6 +67,8 @@ msgid ""
 "``hide_nontasks`` is thus useful when you have a fabfile mixing in "
 "subroutines with real tasks and want to document *just* the real tasks."
 msgstr ""
+"如果你的 fabfile 中混有子程序（subroutine）和任务，而你 *只* 希望将任务文档化，"
+" ``hide_nontasks`` 对你会非常有用。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/docs.pydocstring
 #: of fabric.docs.unwrap_tasks:28
@@ -67,8 +76,10 @@ msgid ""
 "If you run this within an actual Fabric-code-using session (instead of "
 "within a Sphinx ``conf.py``), please seek immediate medical attention."
 msgstr ""
+"如果你在 Fabric 代码实际运行环境中使用它（而非 Sphinx ``conf.py`` 中），请立即就医。"
+"（原文就是“please seek immediate medical attention”——译者注）"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/docs.pydocstring
 #: of fabric.docs.unwrap_tasks:33
 msgid "`~fabric.tasks.WrappedCallableTask`, `~fabric.decorators.task`"
-msgstr ""
+msgstr "`~fabric.tasks.WrappedCallableTask` ， `~fabric.decorators.task`"
