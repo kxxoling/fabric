@@ -23,6 +23,8 @@ msgid ""
 " will exhibit behavior that isn't consistent with, or as flexible as, the "
 "behavior of the ``ssh`` command-line program."
 msgstr ""
+"Fabric 使用纯 Python 实现的 SSH 库管理连接，也就是说可能会因此由于库的兼容性限制"
+"出现问题。下面几种情况下不能保证 Fabric 一些正常，或者和 ``ssh`` 控制台命令一样灵活。"
 
 #: ../usage/ssh.rst:13
 msgid "Unknown hosts"
@@ -36,6 +38,9 @@ msgid ""
 "keys. (For details on how this works, please see the `OpenSSH documentation "
 "<http://openssh.org/manual.html>`_.)"
 msgstr ""
+"SSH 的主机密钥 tracking 机制会纪录所有你打算连接的主机，并将主机的认证信息"
+"（一般是 IP 地址，但有时也可以是域名）和 SSH 密钥映射并保存在 ``~/.ssh/known_hosts`` "
+"文件中。（对其工作方式感兴趣请参阅 `OpenSSH 文档 <http://openssh.org/manual.html>`_ 。）"
 
 #: ../usage/ssh.rst:21
 msgid ""
@@ -44,6 +49,9 @@ msgid ""
 "are available to determine what happens when an unknown host (a host whose "
 "username or IP is not found in ``known_hosts``) is seen:"
 msgstr ""
+"``paramiko`` 库会加载 ``known_hosts`` 文件，并尝试将它和你要连接的主机映射起来，"
+"并提供参数设置用于决定连接未知主机（主机名或者 IP 不存在于 ``known_hosts`` 文件中）"
+"时的行为："
 
 #: ../usage/ssh.rst:26
 msgid ""
@@ -51,6 +59,8 @@ msgid ""
 "results in a Python exception, which will terminate your Fabric session with"
 " a message that the host is unknown."
 msgstr ""
+"**Reject** ：在不安全时拒绝连接。它将抛出一个 Python 异常，因而终止 Fabric 会话，"
+"并输出“未知主机”信息。"
 
 #: ../usage/ssh.rst:29
 msgid ""
@@ -58,6 +68,8 @@ msgid ""
 " connection is made, and things continue normally. Note that this does "
 "**not** modify your on-disk ``known_hosts`` file!"
 msgstr ""
+"**Add** ：将新的主机密钥添加到内存中的已知主机列表，然后一切如常地继续 SSH 连接。"
+"注意，它并不会修改你的 ``known_hosts`` 文件。"
 
 #: ../usage/ssh.rst:32
 msgid ""
@@ -65,6 +77,8 @@ msgid ""
 "library option which would result in the user being prompted about the "
 "unknown key and whether to accept it."
 msgstr ""
+"**Ask** 并不是 Fabric 中实现的，而是 ``paramiko`` 库提供的选项，它会询问用户"
+"是否接受该未知主机的密钥。"
 
 #: ../usage/ssh.rst:36
 msgid ""
@@ -75,6 +89,10 @@ msgid ""
 "modify their fabfiles at module level to set ``env.reject_unknown_hosts = "
 "True``."
 msgstr ""
+"在 Fabric 中控制究竟是拒绝连接韩式添加主机的选项是 :ref:`env.reject_unknown_hosts "
+"<reject-unknown-hosts>` ，方便起见其默认值是 ``False`` ，我们认为这是安全和便利"
+"之间合适的折中方案，对此有异议可以在 fabfile 中设置 ``env.reject_unknown_hosts = True`` "
+"重设安全等级。"
 
 #: ../usage/ssh.rst:44
 msgid "Known hosts with changed keys"
@@ -90,6 +108,9 @@ msgid ""
 "host previously recorded in ``known_hosts`` suddenly starts sending us a "
 "different host key."
 msgstr ""
+"SSH 密钥／指纹认证机制的目的在于检测中间人攻击：如果攻击者将你的 SSH 流量转向他控制的"
+"计算机，并将其伪装为你的目的主机，将会检测到主机密钥不匹配。因此 SSH （及其 Python 实现）"
+"发现主机密钥与 ``known_hosts`` 文件中纪录不一致时，都默认立即拒绝连接。"
 
 #: ../usage/ssh.rst:54
 msgid ""
@@ -101,6 +122,11 @@ msgid ""
 "known-hosts>` to True when you want this behavior; it is False by default, "
 "in order to preserve default SSH behavior."
 msgstr ""
+"在某些情况下，比如部署 EC2 时，你可能会打算忽略该问题，我们目前所采用的 SSH 层并没有提供"
+"对该操作的明确控制，但是可以通过跳过 ``known_hosts`` 文件的加载过程——如果 ``known_hosts`` "
+"文件为空，则不会出现纪录不一致的问题。如果你需要这样做，可以设置 "
+":ref:`env.disable_known_hosts <disable-known-hosts>` 为 ``True`` ，其默认值为"
+" ``False`` 以遵从 SSH 的默认设置。"
 
 #: ../usage/ssh.rst:63
 msgid ""
