@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric\n"
@@ -19,14 +19,14 @@ msgstr "任务"
 #: of fabric.tasks.Task:1
 msgid ""
 "Abstract base class for objects wishing to be picked up as Fabric tasks."
-msgstr ""
+msgstr "Fabric 任务对象的抽象基类。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.Task:3
 msgid ""
 "Instances of subclasses will be treated as valid tasks when present in "
 "fabfiles loaded by the :doc:`fab </usage/fab>` tool."
-msgstr ""
+msgstr "执行 :doc:`fab </usage/fab>` 命令时，会将 fabfile 中其所有子类的实例当作合法任务。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.Task:6
@@ -35,11 +35,13 @@ msgid ""
 "please see the usage documentation on :ref:`new-style tasks <new-style-"
 "tasks>`."
 msgstr ""
+"其具体实现以及 `~fabric.tasks.Task` 子类的使用参见 :ref:`新式任务 <new-style-tasks>`"
+" 的文档。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.Task.__weakref__:1
 msgid "list of weak references to the object (if defined)"
-msgstr ""
+msgstr "该对象弱引用的列表（如果有定义的话）"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.Task.get_hosts_and_effective_roles:1
@@ -47,28 +49,30 @@ msgid ""
 "Return a tuple containing the host list the given task should be using and "
 "the roles being used."
 msgstr ""
+"返回一个包含了当前任务将于使用到的主机列表以及将要使用到的角色的远祖。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.Task.get_hosts_and_effective_roles:4
 msgid ""
 "See :ref:`host-lists` for detailed documentation on how host lists are set."
 msgstr ""
+"如何设置主机列表的详细文档参见 :ref:`host-lists` 。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.WrappedCallableTask:1
 msgid ""
 "Wraps a given callable transparently, while marking it as a valid Task."
-msgstr ""
+msgstr "透明地封装一个 callable 对象为合法任务。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.WrappedCallableTask:3
 msgid "Generally used via `~fabric.decorators.task` and not directly."
-msgstr ""
+msgstr "通常通过 `~fabric.decorators.task` 调用而不直接使用。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.WrappedCallableTask:7
 msgid "`~fabric.docs.unwrap_tasks`, `~fabric.decorators.task`"
-msgstr ""
+msgstr "`~fabric.docs.unwrap_tasks` ， `~fabric.decorators.task`"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.execute:1
@@ -84,6 +88,9 @@ msgid ""
 " on the command line (including :ref:`namespaced tasks <namespaces>`, e.g. "
 "``\"deploy.migrate\"``."
 msgstr ""
+"``task`` 可以是一个可调用对象，或者是一个注册任务的名字，只要命令行中提供了该名字"
+"（包括 :ref:`命名任务 <namespaces>` ，例如 ``\"deploy.migrate\"`` ），就会"
+"自动寻找对应的 callable 对象。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.execute:8
@@ -147,33 +154,34 @@ msgstr ""
 msgid ""
 ":ref:`The execute usage docs <execute>`, for an expanded explanation and "
 "some examples."
-msgstr ""
+msgstr ":ref:`execute 使用文档 <execute>` 中提供了更详细的解释和示例。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.execute:40
 msgid ""
 "Added the return value mapping; previously this function had no defined "
 "return value."
-msgstr ""
+msgstr "新增了返回值映射，之前的版本中没有返回值。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.requires_parallel:1
 msgid "Returns True if given ``task`` should be run in parallel mode."
-msgstr ""
+msgstr "如果 ``task`` 需要在并行模式下运行则返回 ``True`` 。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.requires_parallel:3
 msgid "Specifically:"
-msgstr ""
+msgstr "具体来说："
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.requires_parallel:5
 msgid "It's been explicitly marked with ``@parallel``, or:"
-msgstr ""
+msgstr "显式地添加了 ``@parallel`` 装饰器，或者："
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.requires_parallel:6
 msgid ""
 "It's *not* been explicitly marked with ``@serial`` *and* the global parallel"
 " option (``env.parallel``) is set to ``True``."
-msgstr ""
+msgstr "全局并行参数（ ``env.parallel`` ）为 ``Ture`` 时 *非* 显式地添加 "
+"``@serial`` 装饰器。"
