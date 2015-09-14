@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric\n"
@@ -13,19 +13,19 @@ msgstr ""
 
 #: ../api/contrib/project.rst:3
 msgid "Project Tools"
-msgstr ""
+msgstr "项目工具"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project:1
 msgid ""
 "Useful non-core functionality, e.g. functions composing multiple operations."
-msgstr ""
+msgstr "其它非核心有用功能，例如：组合多个业务。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:1
 msgid ""
 "Synchronize a remote directory with the current project directory via rsync."
-msgstr ""
+msgstr "使用 rsync 讲远程路径和本地项目同步。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:3
@@ -34,6 +34,8 @@ msgid ""
 " every time it is invoked, ``rsync_project()`` uses the ``rsync`` command-"
 "line utility, which only transfers files newer than those on the remote end."
 msgstr ""
+"``upload_project()`` 使用 ``scp`` 来复制整个项目，``rsync_project()`` 会使用 "
+"``rsync`` 命令，只会将本地比远程更新的文件同步过去。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:8
@@ -43,6 +45,8 @@ msgid ""
 "on both your local and remote systems in order for this operation to work "
 "correctly."
 msgstr ""
+"``rsync_project()`` 只是一个简单的 ``rsync`` 封装，关于 ``rsync`` 是如何工作的，"
+"请阅读它自身的使用手册。为了保证工作正常，你需要保证本地和远程系统中都已安装 ``rsync``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:13
@@ -51,11 +55,13 @@ msgid ""
 "output of that function call; thus it will return the stdout, if any, of the"
 " resultant ``rsync`` call."
 msgstr ""
+"这个函数会调用 Fabric ``local()`` 操作，并将其操作的输出返回回来；也就是说会返回 stdout，"
+"如果有的话，还会包含因而产生的 ``rsync`` 调用结果。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:17
 msgid "``rsync_project()`` takes the following parameters:"
-msgstr ""
+msgstr "``rsync_project()`` 接受以下参数："
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:19
@@ -64,6 +70,8 @@ msgid ""
 "directory on the remote server. Due to how ``rsync`` is implemented, the "
 "exact behavior depends on the value of ``local_dir``:"
 msgstr ""
+"``remote_dir``：是唯一必选的参数，指的需要同步的远程服务器目录。根据 ``rsync`` 实现方式"
+"其具体行为取决于 ``local_dir`` 的值。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:23
@@ -73,6 +81,9 @@ msgid ""
 "\"foldername/\")`` will drop the contents of ``foldername`` inside of "
 "``/home/username/project``."
 msgstr ""
+"如果 ``local_dir`` 以斜线结尾，将会将文件移动到 ``remote_dir``。"
+"例如：``rsync_project(\"/home/username/project\", \"foldername/\")`` "
+"会将目录 ``foldername`` 中的所有文件移动到 ``/home/username/project`` 目录。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:27
@@ -85,6 +96,10 @@ msgid ""
 "directory ``/home/username/foldername`` (if needed) and place the files "
 "there."
 msgstr ""
+"如果 ``local_dir`` **没有**以斜线结尾（或者是没有指定 ``local_dir`` 的默认情况下），"
+"将会以 ``remote_dir`` 为父文目录创建一个名为 ``local_dir`` 的子目录。"
+"也就是说 ``rsync_project(\"/home/username\", \"foldername\")`` 会在创建一个 "
+"``/home/username/foldername`` 目录，并将所有文件置于其中。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:35
@@ -95,6 +110,10 @@ msgid ""
 "be a single directory (``\"my_directory\"``) or multiple directories "
 "(``\"dir1 dir2\"``). See the ``rsync`` documentation for details."
 msgstr ""
+"``local_dir``：默认情况下， ``rsync_project`` 使用当前工作目录作为源目录，"
+"你可以使用字符串参数 ``local_dir`` 覆盖该设置。该参数会原封不动地传递给 ``rsync``，"
+"因此它的值可以是单个目录（``\"my_directory\"``），或者多个目录（``\"dir1 dir2\"``）。"
+"详细用法请参阅 ``rsync`` 的文档。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:40
@@ -102,6 +121,8 @@ msgid ""
 "``exclude``: optional, may be a single string, or an iterable of strings, "
 "and is used to pass one or more ``--exclude`` options to ``rsync``."
 msgstr ""
+"``exclude``：可选，可以是一个字符串，也可以是一个字符串的迭代器，用于向 ``rsync`` "
+"传递一个或多个 ``--exclude`` 参数。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:42
@@ -110,13 +131,15 @@ msgid ""
 " used. If True, instructs ``rsync`` to remove remote files that no longer "
 "exist locally. Defaults to False."
 msgstr ""
+"``delete``：用于设置 ``rsync`` 的 ``--delete`` 选项的参数。其值为 True 将会在远程"
+"删除本地已不存在的文件。默认值为 False。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:45
 msgid ""
 "``extra_opts``: an optional, arbitrary string which you may use to pass "
 "custom arguments or options to ``rsync``."
-msgstr ""
+msgstr "``extra_opts``：可选参数，直接将可选参数传送给 ``rsync``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:47
@@ -124,12 +147,13 @@ msgid ""
 "``ssh_opts``: Like ``extra_opts`` but specifically for the SSH options "
 "string (rsync's ``--rsh`` flag.)"
 msgstr ""
+"``ssh_opts``：类似于 ``extra_opts``，但是仅限于 SSH 连接（rsync ``--rsh`` 参数）。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:49
 msgid ""
 "``capture``: Sent directly into an inner `~fabric.operations.local` call."
-msgstr ""
+msgstr "``capture``：直接传给 `~fabric.operations.local` 内部调用。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:50
@@ -137,6 +161,7 @@ msgid ""
 "``upload``: a boolean controlling whether file synchronization is performed "
 "up or downstream. Upstream by default."
 msgstr ""
+"``upload``：一个布尔值，用于控制文件同步设置是作为上游还是下游，默认是上游。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:52
@@ -144,6 +169,8 @@ msgid ""
 "``default_opts``: the default rsync options ``-pthrvz``, override if desired"
 " (e.g. to remove verbosity, etc)."
 msgstr ""
+"``default_opts``：默认 rsync 参数是 ``-pthrvz``，你可以传递参数覆盖默认值（例如："
+"你可以删除 verbosity 输出选项，等等）。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:55
@@ -153,6 +180,8 @@ msgid ""
 "nonstandard port, or when ``env.key_filename`` is non-empty, will use the "
 "specified port and/or SSH key filename(s)."
 msgstr ""
+"该函数遵循 Fabric 的端口和 SSH key 设置，如果当前主机的使用了非默认端口，"
+"或者 ``env.key_filename`` 变量非空时，将使用指定端口和/或 SSH key 文件。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:60
@@ -160,33 +189,34 @@ msgid ""
 "For reference, the approximate ``rsync`` command-line call that is "
 "constructed by this function is the following::"
 msgstr ""
+"作为参考，这个函数构建出的 ``rsync`` 调用命令类似于下面这个： ::"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:66
 msgid "The ``ssh_opts`` keyword argument."
-msgstr ""
+msgstr "关键字参数 ``ssh_opts`` 。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:68
 msgid "The ``capture`` keyword argument."
-msgstr ""
+msgstr "关键字参数 ``capture`` 。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.rsync_project:70
 msgid "The ``default_opts`` keyword argument."
-msgstr ""
+msgstr "关键字参数 ``default_opts`` 。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.upload_project:1
 msgid "Upload the current project to a remote system via ``tar``/``gzip``."
-msgstr ""
+msgstr "使用 ``tar``/``gzip`` 将当前项目上传到远程系统中。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.upload_project:3
 msgid ""
 "``local_dir`` specifies the local project directory to upload, and defaults "
 "to the current working directory."
-msgstr ""
+msgstr "``local_dir`` 参数用于指定将要上传的本地项目路径，默认为当前工作目录。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.upload_project:6
@@ -195,6 +225,8 @@ msgid ""
 " copy of ``local_dir`` will appear as a subdirectory of ``remote_dir``) and "
 "defaults to the remote user's home directory."
 msgstr ""
+"``remote_dir`` 用于指定要上传的目标目录（也就是说会复制一份 ``local_dir`` 目录作为 "
+"``remote_dir`` 的子目录），其默认值是用户的 home 目录。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.upload_project:10
@@ -202,7 +234,8 @@ msgid ""
 "``use_sudo`` specifies which method should be used when executing commands "
 "remotely. ``sudo`` will be used if use_sudo is True, otherwise ``run`` will "
 "be used."
-msgstr ""
+msgstr "远程执行命令时可以设置 ``use_sudo`` 参数。``use_sudo`` 为 True 的时候，"
+"将使用 ``sudo`` 执行程序，否则使用 ``run`` 。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.upload_project:14
@@ -212,13 +245,15 @@ msgid ""
 "something similar. It will attempt to clean up the local and remote tarfiles"
 " when it finishes executing, even in the event of a failure."
 msgstr ""
+"这个函数会调用 ``tar`` 和 ``gzip`` 程序/库，因此在 Win32 系统上并没有得到很好的支持，"
+"除非使用了 Cygwin 之类的程序。该函数不论是非执行成功，都会将远程的 tar 文件清理干净。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.upload_project:19
 msgid "Added the ``local_dir`` and ``remote_dir`` kwargs."
-msgstr ""
+msgstr "新增关键字参数 ``local_dir`` 和 ``remote_dir`` 。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/project.pydocstring
 #: of fabric.contrib.project.upload_project:22
 msgid "Added the ``use_sudo`` kwarg."
-msgstr ""
+msgstr "新增关键字参数 ``use_sudo`` 。"
