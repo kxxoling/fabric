@@ -78,7 +78,7 @@ msgstr "`~fabric.docs.unwrap_tasks` ， `~fabric.decorators.task`"
 #: of fabric.tasks.execute:1
 msgid ""
 "Execute ``task`` (callable or name), honoring host/role decorators, etc."
-msgstr ""
+msgstr "执行 ``task`` （可调用对象或其名字），与 host/role 装饰器保持一致。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.execute:3
@@ -100,6 +100,9 @@ msgid ""
 ":option:`-H`, :ref:`env.hosts <hosts>`, the `~fabric.decorators.hosts` or "
 "`~fabric.decorators.roles` decorators, and so forth."
 msgstr ""
+"主机列表中的每一个主机上都会执行一次任务，其执行方式（也）和 CLI 任务一样："
+"优先顺序是 :option:`-H`、:ref:`env.hosts <hosts>`、`~fabric.decorators.hosts` "
+"到 `~fabric.decorators.roles` 装饰器，依此类推。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.execute:13
@@ -109,6 +112,9 @@ msgid ""
 "if they had been specified on the command line like e.g. ``fab "
 "taskname:host=hostname``."
 msgstr ""
+"关键字参数 ``host``、``hosts``、``role``、``roles`` 以及 ``exclude_hosts`` "
+"会在最后调用前整理清楚，用于生成任务真正的主机列表, 最终像是在命令行执行："
+"``fab taskname:host=hostname`` 一样。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.execute:18
@@ -118,6 +124,9 @@ msgid ""
 "function!) when it is called, so ``execute(mytask, 'arg1', kwarg1='value')``"
 " will (once per host) invoke ``mytask('arg1', kwarg1='value')``."
 msgstr ""
+"其它参数或者关键字参数将会一字不差地传递给 ``task``（函数，而非封装在你的函数周围的 "
+"``@task`` 装饰器），``execute(mytask, 'arg1', kwarg1='value')``"
+" 会（在每台主机上）这样都调用 ``mytask('arg1', kwarg1='value')``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.execute:24
@@ -130,6 +139,10 @@ msgid ""
 ":ref:`env.skip_bad_hosts <skip-bad-hosts>` is True) the return value for "
 "that host will be the error object or message."
 msgstr ""
+"一个主机字符串对应任务运行结果的字典。例如：主机 `a` 什么都不返回，主机 `b` 返回 "
+"``'bar'`` 时，``execute(foo, hosts=['a', 'b'])`` 的结果会是 ``{'a': None, 'b': 'bar'}``。"
+"在一个主机执行失败，但并没有退出整个程序（如：:ref:`env.skip_bad_hosts <skip-bad-"
+"hosts>` 设置为 True）时，该主机的返回值将是一个 error 对象或者信息。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.execute:25
@@ -139,6 +152,8 @@ msgid ""
 "return ``{'a': None, 'b': 'bar'}`` if ``foo`` returned nothing on host `a` "
 "but returned ``'bar'`` on host `b`."
 msgstr ""
+"一个主机字符串对应任务运行结果的字典。例如：主机 `a` 什么都不返回，主机 `b` 返回 "
+"``'bar'`` 时，``execute(foo, hosts=['a', 'b'])`` 的结果会是 ``{'a': None, 'b': 'bar'}``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.execute:30
@@ -148,6 +163,8 @@ msgid ""
 "hosts>` is True) the return value for that host will be the error object or "
 "message."
 msgstr ""
+"在一个主机执行失败，但并没有退出整个程序（如：:ref:`env.skip_bad_hosts <skip-bad-"
+"hosts>` 设置为 True）时，该主机的返回值将是一个 error 对象或者信息。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/tasks.pydocstring
 #: of fabric.tasks.execute:36
