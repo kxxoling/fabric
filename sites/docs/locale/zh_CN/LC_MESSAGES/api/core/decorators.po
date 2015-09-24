@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric\n"
@@ -18,13 +18,13 @@ msgstr "装饰器"
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators:1
 msgid "Convenience decorators for use in fabfiles."
-msgstr ""
+msgstr "fabfile 中可以方便使用的装饰器。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.hosts:1
 msgid ""
 "Decorator defining which host or hosts to execute the wrapped function on."
-msgstr ""
+msgstr "该装饰器用于指定被装饰的函数执行在那台主机或哪些主机列表上。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.hosts:3
@@ -33,6 +33,8 @@ msgid ""
 "command line, ``my_func`` will be run on ``host1``, ``host2`` and ``host3``,"
 " and with specific users on ``host1`` and ``host3``::"
 msgstr ""
+"例如：如果不在控制台覆盖相关参数的话，将会在 ``host1``、``host2`` 以及 ``host3`` "
+"上执行 ``my_func``，并且在 ``host1`` 和 ``host3`` 上都指定了登录用户。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.hosts:11
@@ -41,6 +43,9 @@ msgid ""
 "(``@hosts('host1')``, ``@hosts('host1', 'host2')``) or a single, iterable "
 "argument (``@hosts(['host1', 'host2'])``)."
 msgstr ""
+"`~fabric.decorators.hosts` 接受 host 的参数列表（``@hosts('host1')``, "
+"``@hosts('host1', 'host2')``）或者一个 hosts 可迭代对象（``@hosts(['host1', "
+"'host2'])``）。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.hosts:15
@@ -48,6 +53,8 @@ msgid ""
 "Note that this decorator actually just sets the function's ``.hosts`` "
 "attribute, which is then read prior to executing the function."
 msgstr ""
+"要注意，这个装饰器仅仅会设置函数的 ``.hosts`` 属性，which is then read prior"
+" to executing the function."
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.hosts:18
@@ -55,12 +62,14 @@ msgid ""
 "Allow a single, iterable argument (``@hosts(iterable)``) to be used instead "
 "of requiring ``@hosts(*iterable)``."
 msgstr ""
+"可以接收一个可迭代对象作为唯一参数（``@hosts(iterable)``），不再要求这样写： "
+"``@hosts(*iterable)``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.parallel:1
 msgid ""
 "Forces the wrapped function to run in parallel, instead of sequentially."
-msgstr ""
+msgstr "强制被装饰的函数并行执行而非同步执行。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.parallel:3
@@ -69,11 +78,13 @@ msgid ""
 "<env-parallel>`. It also takes precedence over `~fabric.decorators.serial` "
 "if a task is decorated with both."
 msgstr ""
+"该装饰器的优先级高于全局变量 :ref:`env.parallel <env-parallel>`。如果函数还装饰了 "
+"`~fabric.decorators.serial` 的话，依旧是它的优先级更高。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.roles:1
 msgid "Decorator defining a list of role names, used to look up host lists."
-msgstr ""
+msgstr "该装饰器用于定义（服务器）“角色”名，然后用于寻找对应的主机列表。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.roles:3
@@ -83,6 +94,9 @@ msgid ""
 "barring an override on the command line, ``my_func`` will be executed "
 "against the hosts listed in the ``webserver`` and ``dbserver`` roles::"
 msgstr ""
+"角色是定义在 `env` 中的键，其对应的值是一个或多个主机连接字符穿的列表。例如：不考虑"
+"控制台参数覆盖的话，``my_func`` 将会在 ``webserver`` 和 ``dbserver`` 角色"
+"对应的主机列表上执行： ::"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.roles:17
@@ -92,18 +106,21 @@ msgid ""
 "Similarly, this decorator uses the same mechanism as "
 "`~fabric.decorators.hosts` and simply sets ``<function>.roles``."
 msgstr ""
+"和 `~fabric.decorators.hosts` 一样， `~fabric.decorators.roles` 也接受"
+"参数列表，或者单个可迭代对象作为参数，其实现机制是设置 ``<function>.roles``，"
+"同样类似于 `~fabric.decorators.hosts`。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.roles:22
 msgid ""
 "Allow a single, iterable argument to be used (same as "
 "`~fabric.decorators.hosts`)."
-msgstr ""
+msgstr "（和 `~fabric.decorators.hosts` 一样）支持可迭代对象作为唯一参数。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.runs_once:1
 msgid "Decorator preventing wrapped function from running more than once."
-msgstr ""
+msgstr "阻止函数多次执行的装饰器。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.runs_once:3
@@ -112,6 +129,8 @@ msgid ""
 " that it will only run once per Python interpreter session, which in typical"
 " use means \"once per invocation of the ``fab`` program\"."
 msgstr ""
+"通过保存内部状态，使用该装饰器可以保证函数在每个 Python 解释器中只运行一次，"
+"通常在使用时它的作用都是“每个 ``fab`` 程序生命周期中只运行一次”。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.runs_once:7
@@ -120,17 +139,18 @@ msgid ""
 "2nd, 3rd, ..., Nth time it is called, and will return the value of the "
 "original run."
 msgstr ""
+"任何被该装饰器装饰的函数在第二次、第三次……第 n 次执行时都会静默失败，并返回初次运行的结果。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.runs_once:11
 msgid "``runs_once`` does not work with parallel task execution."
-msgstr ""
+msgstr "``runs_once`` 无法和任务并行执行同时生效。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.serial:1
 msgid ""
 "Forces the wrapped function to always run sequentially, never in parallel."
-msgstr ""
+msgstr "强制被装饰的函数顺序执行，不并行执行。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.serial:3
@@ -140,11 +160,14 @@ msgid ""
 "`~fabric.decorators.serial` *and* `~fabric.decorators.parallel`, "
 "`~fabric.decorators.parallel` wins."
 msgstr ""
+"该装饰器效果的优先级高于全局变量 :ref:`env.parallel <env-parallel>`。如果任务同时被 "
+"`~fabric.decorators.serial` *和* `~fabric.decorators.parallel` 装饰器装饰，"
+"`~fabric.decorators.parallel` 的优先级更高。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.task:1
 msgid "Decorator declaring the wrapped function to be a new-style task."
-msgstr ""
+msgstr "将函数封装为新式任务的装饰器。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.task:3
@@ -152,13 +175,15 @@ msgid ""
 "May be invoked as a simple, argument-less decorator (i.e. ``@task``) or with"
 " arguments customizing its behavior (e.g. ``@task(alias='myalias')``)."
 msgstr ""
+"可以作为简单的、无参数的装饰器使用（``@task`` 这样），也可以使用参数修订其行为"
+"（比如： ``@task(alias='myalias')``）。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.task:6
 msgid ""
 "Please see the :ref:`new-style task <task-decorator>` documentation for "
 "details on how to use this decorator."
-msgstr ""
+msgstr  "关于 :ref:`new-style task <task-decorator>` 装饰器的使用请参见其文档。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.task:9
@@ -166,21 +191,23 @@ msgid ""
 "Added the ``alias``, ``aliases``, ``task_class`` and ``default`` keyword "
 "arguments. See :ref:`task-decorator-arguments` for details."
 msgstr ""
+"新增关键字参数 ``alias``、``aliases``、``task_class`` 和 ``default``。详情参见 "
+":ref:`task-decorator-arguments`。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.task:12
 msgid "Added the ``name`` keyword argument."
-msgstr ""
+msgstr "新增关键字参数 ``name``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.task:15
 msgid "`~fabric.docs.unwrap_tasks`, `~fabric.tasks.WrappedCallableTask`"
-msgstr ""
+msgstr "~fabric.docs.unwrap_tasks`、 `~fabric.tasks.WrappedCallableTask`"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.with_settings:1
 msgid "Decorator equivalent of ``fabric.context_managers.settings``."
-msgstr ""
+msgstr "一个装饰器，作用等价于 ``fabric.context_managers.settings``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.with_settings:3
@@ -190,12 +217,14 @@ msgid ""
 "want a given setting applied to an entire function body, or wish to retrofit"
 " old code without indenting everything."
 msgstr ""
+"将整个函数封装起来，其效果类似于执行在 ``settings`` 上下文管理器中。"
+"如果你想要修改函数的设置，但不愿改动其缩进时，它会很有用。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.with_settings:8
 msgid ""
 "For example, to turn aborts into warnings for an entire task function::"
-msgstr ""
+msgstr "例如：将整个任务函数中的退出（abort）转换为警告： ::"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/decorators.pydocstring
 #: of fabric.decorators.with_settings:14
