@@ -18,19 +18,19 @@ msgstr "文件和目录管理"
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files:1
 msgid "Module providing easy API for working with remote files and folders."
-msgstr ""
+msgstr "提供远程文件和文件夹操作 API 的简单模块。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.append:1
 msgid "Append string (or list of strings) ``text`` to ``filename``."
-msgstr ""
+msgstr "添加字符串（列表） ``text`` 至 ``filename`` 。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.append:3
 msgid ""
 "When a list is given, each string inside is handled independently (but in "
 "the order given.)"
-msgstr ""
+msgstr "如果提供的是一个 list，其中的每一个字符串都将将会（按顺序）独立处理。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.append:6
@@ -39,6 +39,8 @@ msgid ""
 "None is returned immediately. Otherwise, the given text is appended to the "
 "end of the given ``filename`` via e.g. ``echo '$text' >> $filename``."
 msgstr ""
+"如果 ``filename`` 中已存在 ``text``，将不会执行添加并立刻返回 None，反之则将给定 "
+"``text`` 添加到 ``filename`` 的末尾，比如 ``echo '$text' >> $filename``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.append:10
@@ -48,6 +50,9 @@ msgid ""
 "\"append lines to a file\" use case. You may override this and force partial"
 " searching (e.g. ``^<text>``) by specifying ``partial=True``."
 msgstr ""
+"用于测试 ``text`` 是否已经存在，默认是整行匹配，例如： ``^<text>$``。"
+"因为在“向文件的结尾增添一行”的使用情况下，这是最合适的选择。你可以指定 ``partial=True`` "
+"来覆盖它，并强制部分搜索（比如 ``^<text>``）。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.append:15
@@ -55,6 +60,8 @@ msgid ""
 "Because ``text`` is single-quoted, single quotes will be transparently "
 "backslash-escaped. This can be disabled with ``escape=False``."
 msgstr ""
+"由于 ``text`` 是包裹在单引号中的，因此会自动将其中的单引号使用反斜线转译，可以使用"
+" ``escape=False`` 关闭该选项。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.append:18
@@ -65,7 +72,7 @@ msgstr ""
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.sed:12
 msgid "If ``use_sudo`` is True, will use `sudo` instead of `run`."
-msgstr ""
+msgstr "如果 ``use_sudo`` 设置为 True，则使用 `sudo` 而不是 `run`。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.append:20
@@ -75,11 +82,13 @@ msgid ""
 "The ``shell`` argument will be eventually passed to ``run/sudo``. See "
 "description of the same argumnet in ``~fabric.contrib.sed`` for details."
 msgstr ""
+"``shell`` 参数最终会传递给 ``run/sudo`` ，具体描述和  ``~fabric.contrib.sed`` "
+"一样，请查看它的文档详细了解。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.append:23
 msgid "Added the ``partial`` keyword argument."
-msgstr ""
+msgstr "新增关键字参数 ``partial``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.append:25
@@ -88,12 +97,13 @@ msgstr ""
 msgid ""
 "Swapped the order of the ``filename`` and ``text`` arguments to be "
 "consistent with other functions in this module."
-msgstr ""
+msgstr "修改了 ``filename`` 和 ``text`` 参数的顺序与模块中的其它函数保持一致。"
+
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.append:28
 msgid "Changed default value of ``partial`` kwarg to be ``False``."
-msgstr ""
+msgstr "修改关键字参数 ``partial`` 的默认值为 ``False``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.append:30
@@ -102,7 +112,7 @@ msgstr ""
 msgid ""
 "Updated the regular expression related escaping to try and solve various "
 "corner cases."
-msgstr ""
+msgstr "更新了转译相关的正则表达式以修复众多边界情况下的问题。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.append:33
@@ -115,19 +125,19 @@ msgstr ""
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.uncomment:15
 msgid "Added the ``shell`` keyword argument."
-msgstr ""
+msgstr "新增关键字参数 ``shell``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.comment:1
 msgid "Attempt to comment out all lines in ``filename`` matching ``regex``."
-msgstr ""
+msgstr "将 ``filename`` 文件中所有匹配 ``regex`` 的行全部注释掉。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.comment:3
 msgid ""
 "The default commenting character is `#` and may be overridden by the "
 "``char`` argument."
-msgstr ""
+msgstr "默认的注释字符是 `#` ，可以使用 ``char`` 参数覆盖这项设置。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.comment:6
@@ -137,6 +147,8 @@ msgid ""
 "This function uses the `sed` function, and will accept the same "
 "``use_sudo``, ``shell`` and ``backup`` keyword arguments that `sed` does."
 msgstr ""
+"这个函数调用了 `sed` 函数，因此和 `sed` 一样接受 ``use_sudo``、``shell`` 和 "
+"``backup`` 等关键字参数。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.comment:9
@@ -144,6 +156,7 @@ msgid ""
 "`comment` will prepend the comment character to the beginning of the line, "
 "so that lines end up looking like so::"
 msgstr ""
+"`comment` 会在行首添加注释符号，函数的结果大概会是这个样子的： ::"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.comment:16
@@ -152,6 +165,8 @@ msgid ""
 "sometimes do when inserted by hand. Neither will they have a trailing space "
 "unless you specify e.g. ``char='# '``."
 msgstr ""
+"换句话说，注释操作并不“遵循”手写代码时的缩进规范，注释符后面也不会跟上空白，除非手动指定，"
+"比如： ``char='# '``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.comment:22
@@ -163,11 +178,15 @@ msgid ""
 "r'^foo$')`` will result in a `sed` call with the \"before\" regex of "
 "``r'^(foo)$'`` (and the \"after\" regex, naturally, of ``r'#\\1'``.)"
 msgstr ""
+"为了保护被注释的代码，这个函数会将 ``regex`` 参数包裹在园括号中，并不需要你手动处理。"
+"同时会确保开始的 ``^`` 以及结尾的 ``$`` 字符会被移除在括号之外。"
+"例如：调用 ``comment(filename, r'^foo$')`` 会产生一个 \"before\" 参数为 "
+"``r'^(foo)$'``（\"after\" 参数为 ``r'#\\1'``）的 ``sed`` 调用。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.contains:1
 msgid "Return True if ``filename`` contains ``text`` (which may be a regex.)"
-msgstr ""
+msgstr "如果 ``filename`` 文件中包含 ``text`` （可能是正则表达式）则返回 True。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.contains:3
@@ -177,6 +196,8 @@ msgid ""
 "change this behavior so that only a line containing exactly ``text`` results"
 " in a True return value."
 msgstr ""
+"默认情况下，这个函数会对代码行进行部分匹配（例如 ``text`` 只包含在某一行文字中的情况），"
+"指定 ``exact=True`` 可以确保只有某一行完全匹配 ``text`` 才会返回 True。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.contains:8
@@ -185,6 +206,8 @@ msgid ""
 "Python regular expression syntax perfectly), and skips ``env.shell`` wrapper"
 " by default."
 msgstr ""
+"这个函数会影响远程 ``egrep`` 的行为（可能无法弯曲符合 Python 正则表达式语法），"
+"默认情况下还会忽略 ``env.shell``  的封装。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.contains:14
@@ -193,16 +216,18 @@ msgid ""
 "performed (this includes overriding ``exact`` so that no ``^``/``$`` is "
 "added.)"
 msgstr ""
+"如果 ``escape`` 设置为 False，则不会进行任何正则表达式相关的转译（会覆盖 ``exact`` "
+"自动添加 ``^``/``$`` 的行为）。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.contains:27
 msgid "Added ``escape`` keyword argument."
-msgstr ""
+msgstr "新增关键字参数 ``escape``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.exists:1
 msgid "Return True if given path exists on the current remote host."
-msgstr ""
+msgstr "如果当前远程主机中存在给定的目录则返回 True。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.exists:5
@@ -212,6 +237,8 @@ msgid ""
 "avoid cluttering output. You may specify ``verbose=True`` to change this "
 "behavior."
 msgstr ""
+"默认情况下， `exists` 会隐藏所有输出（包括 run 那一行、stdout、stderr 以及文件不存在引起的"
+"的任何警告）以避免混乱的输出。设置 ``verbose=True`` 可以修改其行为。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.first:1
@@ -220,28 +247,30 @@ msgid ""
 "exist. May specify ``use_sudo`` and ``verbose`` which are passed to "
 "`exists`."
 msgstr ""
+"返回给定路径中第一个找到文件的那个，如果都找不到则返回 None。``use_sudo`` 和 ``verbose`` "
+"参数将会传递给 `exists`。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.is_link:1
 msgid "Return True if the given path is a symlink on the current remote host."
-msgstr ""
+msgstr "如果当前远程主机中给定路径是一个软链接则返回 True。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.is_link:3
 msgid "If ``use_sudo`` is True, will use `.sudo` instead of `.run`."
-msgstr ""
+msgstr "如果 ``use_sudo`` 值为真则使用 `.sudo` 而非 `.run`。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.is_link:5
 msgid ""
 "`.is_link` will, by default, hide all output. Give ``verbose=True`` to "
 "change this."
-msgstr ""
+msgstr "默认情况下，`.is_link` 会隐藏所有输出，设置 ``verbose=True`` 可以修改该设置。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.sed:1
 msgid "Run a search-and-replace on ``filename`` with given regex patterns."
-msgstr ""
+msgstr "使用给定正则表达式对 ``filename`` 做搜索及替换操作。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.sed:3
@@ -250,6 +279,8 @@ msgid ""
 "s/<before>/<after>/<flags>g\" <filename>``. Setting ``backup`` to an empty "
 "string will, disable backup file creation."
 msgstr ""
+"和 ``sed -i<backup> -r -e \"/<limit>/ s/<before>/<after>/<flags>g\" <filename>`` "
+"等价。设置 ``backup`` 为空字符串可以阻止备份文件的生成。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.sed:7
@@ -259,6 +290,8 @@ msgid ""
 " e.g.  ``http:\\/\\/foo\\.com``, instead just using ``http://foo\\.com`` is "
 "fine."
 msgstr ""
+"方便起见，``before`` 和 ``after`` 将会自动转译斜线、单引号和圆括号，这样你就可以不必把 "
+" ``http://foo\\.com`` 写成 ``http:\\/\\/foo\\.com``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.sed:14
@@ -270,6 +303,10 @@ msgid ""
 "(``cd`` by it's nature is a shell built-in, not a standalone command, so it "
 "should be called within a shell.)"
 msgstr ""
+"``shell`` 参数最终会传递给 `run`/`sudo`。其默认值为 False，这样就不会造成很多"
+"引号和反斜线相互嵌套的问题。不过，设置为 True 在使用 ``~fabric.operations.cd`` "
+"隐式或显式地包裹 ``sudo`` 调用时会很方便。"
+"（``cd`` 本质上是基于 shell 的，而非独立的命令，因此需要在 shell 中调用。）"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.sed:21
@@ -279,23 +316,26 @@ msgid ""
 "``flags=\"i\"``. The ``g`` flag is always specified regardless, so you do "
 "not need to remember to include it when overriding this parameter."
 msgstr ""
+"其它选项可能是出于兼容 sed 标记的目的 -- 例如：设置 ``flags=\"i\"`` 可以插入式地搜索和替换。"
+"标记 ``g`` 意味着不停止执行，"
+"so you do not need to remember to include it when overriding this parameter."
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.sed:26
 msgid "The ``flags`` parameter."
-msgstr ""
+msgstr "``flags`` 参数。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.uncomment:1
 msgid "Attempt to uncomment all lines in ``filename`` matching ``regex``."
-msgstr ""
+msgstr "将文件 ``filename`` 中匹配 ``regex`` 的所有行取消注释。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.uncomment:3
 msgid ""
 "The default comment delimiter is `#` and may be overridden by the ``char`` "
 "argument."
-msgstr ""
+msgstr "默认注释界定符是 `#`，可以使用 ``char`` 参数覆盖该设置。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.uncomment:9
@@ -306,18 +346,21 @@ msgid ""
 "``    # foo`` would become ``    foo`` (the single space is still stripped, "
 "but the preceding 4 spaces are not.)"
 msgstr ""
+"`uncomment` 会删除紧跟在注释字符后面的空格，如果存在的话，并不会影响其之前的空格，"
+"例如： ``# foo`` 会变成 ``foo`` （空格被一起删去了），不过 ``    # foo`` 会变成 "
+"``    foo`` （只删除了注释字符后的空格，前面的 4 个空格并没有）。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.upload_template:1
 msgid "Render and upload a template text file to a remote host."
-msgstr ""
+msgstr "渲染一个模版文本文件，并将结果上传至远程主机。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.upload_template:3
 msgid ""
 "Returns the result of the inner call to `~fabric.operations.put` -- see its "
 "documentation for details."
-msgstr ""
+msgstr "返回内部 `~fabric.operations.put` 调用的结果，详细信息请访问其文档。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.upload_template:6
@@ -327,6 +370,9 @@ msgid ""
 "<http://docs.python.org/library/stdtypes.html#string-formatting>`_ and will "
 "be rendered with the given context dictionary ``context`` (if given.)"
 msgstr ""
+"``filename`` 应当是一个文本文件的地址，可以包含 `Python 插入格式 "
+"<http://docs.python.org/library/stdtypes.html#string-formatting>`_ ，"
+"并结合上下文字典 ``context`` 来渲染（如果存在的话）。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.upload_template:11
@@ -336,6 +382,8 @@ msgid ""
 "instead. Templates will be loaded from the invoking user's current working "
 "directory by default, or from ``template_dir`` if given."
 msgstr ""
+"如果 ``use_jinja`` 被设置为 True，同时你已经安装了 Jinja2 模板库，将会使用 Jinja 来渲染"
+"该模板。默认会从用户的运行目录寻找模板，除非指定了 ``template_dir``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.upload_template:16
@@ -344,6 +392,8 @@ msgid ""
 "``destination``.  If the destination file already exists, it will be renamed"
 " with a ``.bak`` extension unless ``backup=False`` is specified."
 msgstr ""
+"生成的文件将会上传至远程路径 ``destination``。如果已有同名文件存在在远程，远程文件将会"
+"以 ``.bak`` 后缀重命名，除非指定 ``backup=False``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.upload_template:20
@@ -351,6 +401,8 @@ msgid ""
 "By default, the file will be copied to ``destination`` as the logged-in "
 "user; specify ``use_sudo=True`` to use `sudo` instead."
 msgstr ""
+"默认情况下，将会以登录用户身份复制到 ``destination`` 目录，指定 ``use_sudo=True`` "
+"可以强制使用 `sudo` 复制。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.upload_template:23
@@ -359,6 +411,8 @@ msgid ""
 "internal `~fabric.operations.put` call; please see its documentation for "
 "details on these two options."
 msgstr ""
+"关键字参数 ``mirror_local_mode`` 和 ``mode`` 直接用于内部 `~fabric.operations.put` "
+"的调用，详细操作请参阅其文档。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.upload_template:27
@@ -367,13 +421,15 @@ msgid ""
 "`~fabric.operations.run`/`~fabric.operations.sudo` calls, such as those used"
 " for testing directory-ness, making backups, etc."
 msgstr ""
+"关键字参数 ``pty`` 将会被应用到所有 `~fabric.operations.run`/"
+"`~fabric.operations.sudo` 内部调用，例如用于文件路径测试、设置备份等等。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.upload_template:31
 msgid "Added the ``backup``, ``mirror_local_mode`` and ``mode`` kwargs."
-msgstr ""
+msgstr "新增关键字参数 ``backup``、``mirror_local_mode`` 以及 ``mode``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/contrib/files.pydocstring
 #: of fabric.contrib.files.upload_template:33
 msgid "Added the ``pty`` kwarg."
-msgstr ""
+msgstr "新增 ``pty`` 关键字参数。"
