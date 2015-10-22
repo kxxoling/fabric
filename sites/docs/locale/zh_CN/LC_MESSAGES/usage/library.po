@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../usage/library.rst:3
 msgid "Library Use"
-msgstr "库的使用"
+msgstr "作为库使用"
 
 #: ../usage/library.rst:5
 msgid ""
@@ -121,6 +121,6 @@ msgid ""
 "Fabric source code, ``fabric/main.py`` contains the bulk of the extra work "
 "done by ``fab``, and may serve as a useful reference."
 msgstr ""
-"本文档只是个草案，因此并不回详细覆盖到导入 Fabric 库与使用 ``fab`` 命令的全部区别，"
-"上面知识列出了其中最需要注意的陷阱。所以，在不确定如何使用时候，可以参考 Fabric 源代码中"
-" ``fabric/main.py`` 部分，其中 ``fab`` 命令的实现还包含了很多必要的工作。"
+"本文档只是个草案，因此并不会详细覆盖作为 Fabric 库导入与使用 ``fab`` 命令之间的全部区别，"
+"不过上面已经列出了其中最需要注意的陷阱。在不确定如何使用时，可以参考 Fabric 源代码中"
+" ``fabric/main.py`` 部分，``fab`` 命令的实现主要在这里，相信会是很有用的参考。"
