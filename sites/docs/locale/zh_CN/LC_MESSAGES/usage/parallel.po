@@ -222,7 +222,7 @@ msgstr "或者不使用关键字参数 ``pool_size``： ::"
 
 #: ../usage/parallel.rst:152
 msgid "Linewise vs bytewise output"
-msgstr ""
+msgstr "行级输出 vs 比特级输出"
 
 #: ../usage/parallel.rst:154
 msgid ""
