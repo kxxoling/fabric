@@ -25,7 +25,7 @@ msgstr ""
 
 #: ../usage/fab.rst:12
 msgid "Basic use"
-msgstr ""
+msgstr "基本应用"
 
 #: ../usage/fab.rst:14
 msgid ""
@@ -49,13 +49,14 @@ msgstr ""
 
 #: ../usage/fab.rst:31
 msgid "Arbitrary remote shell commands"
-msgstr ""
+msgstr "直接执行远程命令"
 
 #: ../usage/fab.rst:35
 msgid ""
 "Fabric leverages a lesser-known command line convention and may be called in"
 " the following manner::"
 msgstr ""
+"Fabric 还实现了一个鲜为人知的命令行接口，可以像下面这样调用： ::"
 
 #: ../usage/fab.rst:40
 msgid ""
@@ -64,20 +65,24 @@ msgid ""
 "you've defined a host list at the module level or on the command line, this "
 "usage will act like a one-line anonymous task."
 msgstr ""
+"``--`` 之后的所有字符都会用于创建一个 `~fabric.operations.run` 临时调用，"
+"是不是做为 ``fab`` 的参数解析。如果你在模块级或者命令行中设置了的主机列表参数，"
+"它的执行方式将类似单行的匿名任务。"
 
 #: ../usage/fab.rst:45
 msgid ""
 "For example, let's say you just wanted to get the kernel info for a bunch of"
 " systems; you could do this::"
 msgstr ""
+"例如：假设你想要获取多个系统的内核信息，可以这样做： ::"
 
 #: ../usage/fab.rst:50
 msgid "which would be literally equivalent to the following fabfile::"
-msgstr ""
+msgstr "它的作用完全等价于下面的 fabfile： ::"
 
 #: ../usage/fab.rst:57
 msgid "as if it were executed thusly::"
-msgstr ""
+msgstr "像这样执行： ::"
 
 #: ../usage/fab.rst:61
 msgid ""
@@ -86,10 +91,12 @@ msgid ""
 "provides a handy, fast way to quickly dash off an SSH-borne command while "
 "leveraging your fabfile's connection settings."
 msgstr ""
+"大多数情况下，你更愿意将（仅执行一次，不大会再度执行的）任务写入 fabfile，而该特性"
+"基于 fabfile 连接设置，提供了一个方便、快捷的 SSH 命令传输。"
 
 #: ../usage/fab.rst:70
 msgid "Command-line options"
-msgstr ""
+msgstr "命令行参数"
 
 #: ../usage/fab.rst:72
 msgid ""
@@ -178,7 +185,8 @@ msgstr ""
 
 #: ../usage/fab.rst:150
 msgid ":option:`--shortlist`, :option:`--list <-l>`"
-msgstr ""
+msgstr ":option:`--shortlist`、:option:`--list <-l>`"
+
 
 #: ../usage/fab.rst:154
 msgid "Sets :ref:`env.gateway <gateway>` to ``HOST`` host string."
@@ -560,7 +568,7 @@ msgstr ""
 
 #: ../usage/fab.rst:469
 msgid "Settings files"
-msgstr ""
+msgstr "配置文件"
 
 #: ../usage/fab.rst:471
 msgid ""
