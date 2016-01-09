@@ -23,10 +23,14 @@ msgid ""
 "in order to know just what's going on, any nontrivial Fabric task will "
 "quickly become difficult to follow as it runs."
 msgstr ""
+"``fab`` 的输出默认情况下是非常复杂的，几乎是将尽可能地输出所有能输出的内容，"
+"包括远程的 stderr 和 stdout 输出流、被执行的命令，等等。"
+"在很多情况下，为了了解远程的执行进度这是必须的，但是对于复杂的 Fabric 任务，"
+"很快就跟不上它的运行状态。"
 
 #: ../usage/output_controls.rst:13
 msgid "Output levels"
-msgstr ""
+msgstr "输出等级"
 
 #: ../usage/output_controls.rst:15
 msgid ""
@@ -35,18 +39,20 @@ msgid ""
 "independently. This provides flexible control over what is displayed to the "
 "user."
 msgstr ""
+"为了改进任务输出，Fabric 的输出会被整合进一系列基本独立的层级或者集合，"
+"其中每一个都以独立开启或关闭。这为用户端的输出提供了灵活的控制。"
 
 #: ../usage/output_controls.rst:22
 msgid "All levels, save for ``debug`` and ``exceptions``, are on by default."
-msgstr ""
+msgstr "所有层级的输出在 ``debug`` 和 ``exceptions`` 情况下默认都会保存下来。"
 
 #: ../usage/output_controls.rst:25
 msgid "Standard output levels"
-msgstr ""
+msgstr "标准输出层级"
 
 #: ../usage/output_controls.rst:27
 msgid "The standard, atomic output levels/groups are as follows:"
-msgstr ""
+msgstr "标准的原子输出层级／集合包括以下："
 
 #: ../usage/output_controls.rst:29
 msgid ""
@@ -54,6 +60,8 @@ msgid ""
 " user used a keyboard interrupt, or when servers are disconnected from. "
 "These messages are almost always relevant and rarely verbose."
 msgstr ""
+"**status**：状态信息。包括提示 Fabric 已结束运行、用户是否使用键盘中止操作、"
+"或者服务器是否断开了连接。通常来说这些信息都不会很冗长，但是至关重要。"
 
 #: ../usage/output_controls.rst:33
 msgid ""
@@ -62,6 +70,9 @@ msgid ""
 "Note that even if this output group is turned off, aborts will still occur "
 "-- there just won't be any output about why Fabric aborted!"
 msgstr ""
+"**aborts**：终止信息。和状态信息一样，只有当 Fabric 做为库使用的时候才可能应该关闭，"
+"而且还并不一定。注意，即使该输出集被关闭了，并不能阻止程序退出——你只会得不到"
+"任何 Fabric 退出的原因。"
 
 #: ../usage/output_controls.rst:38
 msgid ""
@@ -72,6 +83,10 @@ msgid ""
 "``aborts``, this setting does not control actual warning behavior, only "
 "whether warning messages are printed or hidden."
 msgstr ""
+"**warnings**：警报信息。通常在预计指定操作失败时会将其关闭，比如说你可能"
+"使用 ``grep`` 来测试文件中是否有特定文字。如果设置 ``env.warn_only`` 为 "
+"``True`` 会导致远程程序执行失败时完全没有警报信息。和 ``aborts`` 一样，这项设置"
+"本身并不控制警报行为，仅用于是否输出警报信息。"
 
 #: ../usage/output_controls.rst:45
 msgid ""
@@ -79,35 +94,42 @@ msgid ""
 " ``[myserver] run: ls /var/www``. Also controls printing of tasks being run,"
 " e.g. ``[myserver] Executing task 'foo'``."
 msgstr ""
+"**running**：输出正在执行的命令或者正在传输的文件名称，比如："
+" ``[myserver] run: ls /var/www``。同时它还输出正在运行的任务名，"
+"比如：``[myserver] Executing task 'foo'``。"
 
 #: ../usage/output_controls.rst:49
 msgid ""
 "**stdout**: Local, or remote, stdout, i.e. non-error output from commands."
 msgstr ""
+"**stdout**：本地或远程的 stdout。来自命令行的非错误输出。"
 
 #: ../usage/output_controls.rst:51
 msgid ""
 "**stderr**: Local, or remote, stderr, i.e. error-related output from "
 "commands."
 msgstr ""
+"**stderr**：本地或远程的 stderr。比如命令中错误相关的输出。"
 
 #: ../usage/output_controls.rst:53
 msgid ""
 "**user**: User-generated output, i.e. local output printed by fabfile code "
 "via use of the `~fabric.utils.fastprint` or `~fabric.utils.puts` functions."
 msgstr ""
+"**user**：用户生成的输出。比如：fabfile 中使用 `~fabric.utils.fastprint` 或者 "
+"`~fabric.utils.puts` 函数产生的输出。"
 
 #: ../usage/output_controls.rst:56
 msgid "Added \"Executing task\" lines to the ``running`` output level."
-msgstr ""
+msgstr "``running`` 输出级别中新增 \"Executing task\" 行。"
 
 #: ../usage/output_controls.rst:59
 msgid "Added the ``user`` output level."
-msgstr ""
+msgstr "添加 ``user`` 输出级别。"
 
 #: ../usage/output_controls.rst:63
 msgid "Debug output"
-msgstr ""
+msgstr "调试输出"
 
 #: ../usage/output_controls.rst:65
 msgid ""
@@ -116,6 +138,8 @@ msgid ""
 "``exceptions``, whose behavior is included in ``debug`` but may be enabled "
 "separately."
 msgstr ""
+"在调试问题的时候还有几个可用的原子输出级别：``debug``，和其它的都有所不同；"
+"``exceptions``，其行为只能包含在 ``debug`` 中，不过也可以单独设定。"
 
 #: ../usage/output_controls.rst:70
 msgid ""
@@ -123,24 +147,32 @@ msgid ""
 "largely used to view the \"full\" commands being run; take for example this "
 "`~fabric.operations.run` call::"
 msgstr ""
+"**debug**：开启调试模式（默认是关闭的）。现在它通常是用于浏览正在执行的“全部”"
+"命令，以这个 `~fabric.operations.run` 调用为例： ::"
 
 #: ../usage/output_controls.rst:76
 msgid ""
 "Normally, the ``running`` line will show exactly what is passed into "
 "`~fabric.operations.run`, like so::"
 msgstr ""
+"通常情况下 ``running`` 会详细显示 `~fabric.operations.run` 所接收到的内容，"
+"就像这样： ::"
 
 #: ../usage/output_controls.rst:81
 msgid ""
 "With ``debug`` on, and assuming you've left :ref:`shell` set to ``True``, "
 "you will see the literal, full string as passed to the remote server::"
 msgstr ""
+"开启 ``debug`` 模式，同时保证 :ref:`shell` 设置是 ``True`，你将会看到传向"
+"远程服务器的所有字符都会输出出来： ::"
 
 #: ../usage/output_controls.rst:86
 msgid ""
 "Enabling ``debug`` output will also display full Python tracebacks during "
 "aborts (as if ``exceptions`` output was enabled)."
 msgstr ""
+"启用 ``debug`` 时输出同时还会显示推出时的完整的 Python traceback（如果 "
+"``exceptions`` 也启用了的话）。 "
 
 #: ../usage/output_controls.rst:91
 msgid ""
@@ -150,6 +182,9 @@ msgid ""
 "but ``debug`` is True, you will still be shown the 'running' line in its "
 "debugging form."
 msgstr ""
+"修改其它输出（比如上面例子中修改“running”那一行来显示 shell 以及任何转译字符），"
+"这项设置的优先级处于最高；因此如果 ``running`` 为 False 但 ``debug`` 为 True，"
+"你还是可以在调试区看到 “running”那一行。"
 
 #: ../usage/output_controls.rst:97
 msgid ""
@@ -157,18 +192,20 @@ msgid ""
 "intended for use when ``debug`` is set to ``False`` but one is still "
 "interested in detailed error info."
 msgstr ""
+"**exceptions**：异常发生时是否显示 traceback。如果你对详细的错误信息感兴趣，但 "
+"``debug`` 为 ``False`` 时可以使用。"
 
 #: ../usage/output_controls.rst:101
 msgid "Debug output now includes full Python tracebacks during aborts."
-msgstr ""
+msgstr "终止时的调试输出现在会包含整个 Python traceback。"
 
 #: ../usage/output_controls.rst:104
 msgid "Added the ``exceptions`` output level."
-msgstr ""
+msgstr "新增 ``exceptions`` 输出级别。"
 
 #: ../usage/output_controls.rst:110
 msgid "Output level aliases"
-msgstr ""
+msgstr "输出级别的别名"
 
 #: ../usage/output_controls.rst:112
 msgid ""
@@ -177,6 +214,8 @@ msgid ""
 "be referenced anywhere the other levels are referenced, and will effectively"
 " toggle all of the levels they are mapped to."
 msgstr ""
+"作为对上述原子／独立级别的补充，Fabric 还提供了一系列方便的对应多个级别的别名，"
+"这可能会涉及到一些其它级别涉及的地方，可以用于高效地切换它所对应的级别的状态。"
 
 #: ../usage/output_controls.rst:117
 msgid ""
@@ -184,6 +223,9 @@ msgid ""
 " care to see the 'running' lines and your own print statements (and "
 "warnings)."
 msgstr ""
+"**output**：对应 ``stdout`` 和 ``stderr``。如果你只关心“运行”进度和自己设置的输出"
+"（和警报），会觉得它很方便。"
+
 
 #: ../usage/output_controls.rst:120
 msgid ""
@@ -192,26 +234,32 @@ msgid ""
 " minimum of output (just ``status`` and ``debug`` if it's on), along with "
 "your own print statements."
 msgstr ""
+"**everything**：包括 ``warnings``、``running``、``user`` 和 ``output`` "
+"（见上面介绍）。因此，关闭 ``everything``，你将只能够看到零星输出（只有 ``status`` "
+"和 ``debug``，如果它们是开启状态的话），以及自己的打印信息。"
 
 #: ../usage/output_controls.rst:125
 msgid ""
 "**commands**: Includes ``stdout`` and ``running``. Good for hiding non-"
 "erroring commands entirely, while still displaying any stderr output."
 msgstr ""
+"**commands**：包含 ``stdout`` 和 ``running``。适合用于隐藏无错误的命令，"
+"只显示所有 stderr 输出。"
 
 #: ../usage/output_controls.rst:128
 msgid "Added the ``commands`` output alias."
-msgstr ""
+msgstr "新增 ``commands`` 的输出别名。"
 
 #: ../usage/output_controls.rst:133
 msgid "Hiding and/or showing output levels"
-msgstr ""
+msgstr "隐藏和／或显示输出级别"
 
 #: ../usage/output_controls.rst:135
 msgid ""
 "You may toggle any of Fabric's output levels in a number of ways; for "
 "examples, please see the API docs linked in each bullet point:"
 msgstr ""
+"你可以通过多种方式切换 Fabric 的输出层级，你可以看看下面每条对应的 API 文档作为例子："
 
 #: ../usage/output_controls.rst:138
 msgid ""
@@ -220,6 +268,8 @@ msgid ""
 "level names, and whose values are either True (show that particular type of "
 "output) or False (hide it.)"
 msgstr ""
+"**直接修改 fabric.state.output**：`fabric.state.output` 是字典的子类（类似于 "
+":doc:`env <env>`），以输出层级名为键，值为真（显示某个层级的输出）或假（隐藏）。"
 
 #: ../usage/output_controls.rst:143
 msgid ""
@@ -227,6 +277,8 @@ msgid ""
 "and is what Fabric's internals reference when deciding whether or not to "
 "print their output."
 msgstr ""
+"`fabric.state.output` 是最底层的输出层级实现，也是 Fabric 决定是否输出的"
+"直接引用。"
 
 #: ../usage/output_controls.rst:147
 msgid ""
@@ -236,6 +288,9 @@ msgid ""
 "wrapped block. As with Fabric's other context managers, the prior values are"
 " restored when the block exits."
 msgstr ""
+"**上下文管理器**：`~fabric.context_managers.hide` 和 `~fabric.context_managers.show` "
+"是决定被包含的命令输出是隐藏还是显示的两个上下文管理器，接受一个或多个层级字符串名做为参数。"
+"和其它上下文管理器一样，退出被包含的代码块时，设置会恢复原状。"
 
 #: ../usage/output_controls.rst:155
 msgid ""
@@ -243,6 +298,8 @@ msgid ""
 "`~fabric.context_managers.hide` and/or `~fabric.context_managers.show` "
 "inside itself."
 msgstr ""
+"`~fabric.context_managers.settings` 可以在内部嵌套调用 "
+"`~fabric.context_managers.hide` 以及／或者 `~fabric.context_managers.show`。"
 
 #: ../usage/output_controls.rst:159
 msgid ""
@@ -251,3 +308,6 @@ msgid ""
 "context managers of the same names (but are, naturally, globally applied) "
 "and take comma-separated strings as input."
 msgstr ""
+"**命令行参数**：你可以使用 :doc:`fab` :option:`--hide` 以及／或者 "
+":option:`--show`，其效果正如其名（不过，如你所想，会是全局应用），"
+"其参数应当是逗号分隔的字符输入。"
