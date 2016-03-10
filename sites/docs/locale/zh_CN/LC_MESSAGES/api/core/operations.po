@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric\n"
@@ -13,19 +13,19 @@ msgstr ""
 
 #: ../api/core/operations.rst:3
 msgid "Operations"
-msgstr ""
+msgstr "业务（Operation）"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations:1
 msgid ""
 "Functions to be used in fabfiles and other non-core code, such as "
 "run()/sudo()."
-msgstr ""
+msgstr "应当在 fabfile 或者其他非核心代码中运行的函数，例如 run()/sudo()。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.get:1
 msgid "Download one or more files from a remote host."
-msgstr ""
+msgstr "从远程主机下载一个或多个文件。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.get:3
@@ -85,7 +85,7 @@ msgstr ""
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.get:31
 msgid "``path``: The full remote path, e.g. ``src/projectname/utils.py``."
-msgstr ""
+msgstr "``path``：远程路径完整地址，例如： ``src/projectname/utils.py``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.get:33
@@ -124,7 +124,7 @@ msgstr ""
 msgid ""
 "This behavior is intended to be consistent with the command-line ``scp`` "
 "program."
-msgstr ""
+msgstr "这是为了与命令行程序 ``scp`` 保持一致。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.get:57
@@ -654,12 +654,12 @@ msgstr ""
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.require:24
 msgid "Allow iterable ``provided_by`` values instead of just single values."
-msgstr ""
+msgstr "支持可迭代变量 ``provided_by`` 而不再仅仅是单个值。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.run:1
 msgid "Run a shell command on a remote host."
-msgstr ""
+msgstr "在远程主机上执行 shell 命令。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.run:3
@@ -767,7 +767,7 @@ msgstr ""
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.run:70
 msgid "The default value of ``pty`` is now ``True``."
-msgstr ""
+msgstr "``pty`` 默认值现在为 ``True``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.run:73
@@ -782,24 +782,24 @@ msgstr ""
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.sudo:33
 msgid "The ``quiet``, ``warn_only``, ``stdout`` and ``stderr`` kwargs."
-msgstr ""
+msgstr "关键字参数 ``quiet``、``warn_only``、``stdout`` 以及 ``stderr``。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.run:84
 msgid "The ``timeout`` argument."
-msgstr ""
+msgstr "``timeout`` 参数。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.run:87
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.sudo:39
 msgid "The ``shell_escape`` argument."
-msgstr ""
+msgstr "``shell_escape`` 参数。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.sudo:1
 msgid "Run a shell command on a remote host, with superuser privileges."
-msgstr ""
+msgstr "在远程主机上使用超级用户权限执行 shell 命令。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.sudo:3
@@ -831,9 +831,9 @@ msgstr ""
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.sudo:27
 msgid "See the changed and added notes for `~fabric.operations.run`."
-msgstr ""
+msgstr "参见 `~fabric.operations.run` 的变更。"
 
 #: ../../../../../../usr/local/lib/python2.7/site-packages/fabric/operations.pydocstring
 #: of fabric.operations.sudo:30
 msgid "Now honors :ref:`env.sudo_user <sudo_user>`."
-msgstr ""
+msgstr "Now honors :ref:`env.sudo_user <sudo_user>`."

@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-06-16 16:34+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: FULL NAME <kxxoling@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +19,7 @@ msgstr "定义任务"
 msgid ""
 "As of Fabric 1.1, there are two distinct methods you may use in order to "
 "define which objects in your fabfile show up as tasks:"
-msgstr ""
+msgstr "在 Fabric 1.1 中存在两种定义 fabfile 中对象为任务的方式： ::"
 
 #: ../usage/tasks.rst:8
 msgid ""
@@ -27,6 +27,8 @@ msgid ""
 "`~fabric.tasks.Task` or its subclasses, and also descends into imported "
 "modules to allow building nested namespaces."
 msgstr ""
+"“从 1.1 版本后支持的新”方法需要是 `~fabric.tasks.Task` 或其子类的实现，"
+"and also descends into imported modules to allow building nested namespaces."
 
 #: ../usage/tasks.rst:11
 msgid ""
@@ -46,7 +48,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:22
 msgid "The rest of this document explores these two methods in detail."
-msgstr ""
+msgstr "下面的文档将详细探究这两种方法。"
 
 #: ../usage/tasks.rst:26
 msgid ""
@@ -56,7 +58,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:32
 msgid "New-style tasks"
-msgstr ""
+msgstr "新式任务"
 
 #: ../usage/tasks.rst:34
 msgid ""
@@ -84,7 +86,7 @@ msgstr ""
 msgid ""
 "With the introduction of `~fabric.tasks.Task`, there are two ways to set up "
 "new tasks:"
-msgstr ""
+msgstr "除刚刚介绍的 `~fabric.tasks.Task` 外，还有两种设置新式任务的方式： ::"
 
 #: ../usage/tasks.rst:49
 msgid ""
@@ -106,11 +108,11 @@ msgstr ""
 msgid ""
 "Use of new-style tasks also allows you to set up :ref:`namespaces "
 "<namespaces>`."
-msgstr ""
+msgstr "新式任务还允许设置 :ref:`namespaces <namespaces>` 。"
 
 #: ../usage/tasks.rst:65
 msgid "The ``@task`` decorator"
-msgstr ""
+msgstr "``@task`` 装饰器"
 
 #: ../usage/tasks.rst:67
 msgid ""
@@ -127,7 +129,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:81
 msgid "Arguments"
-msgstr ""
+msgstr "参数"
 
 #: ../usage/tasks.rst:83
 msgid ""
@@ -172,7 +174,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:104
 msgid "Aliases"
-msgstr ""
+msgstr "别名"
 
 #: ../usage/tasks.rst:106
 msgid ""
@@ -196,7 +198,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:132
 msgid "Default tasks"
-msgstr ""
+msgstr "默认任务"
 
 #: ../usage/tasks.rst:134
 msgid ""
@@ -236,7 +238,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:185
 msgid "Doing so updates the task list like so::"
-msgstr ""
+msgstr "这样之后，将任务列表更新成这样： ::"
 
 #: ../usage/tasks.rst:196
 msgid ""
@@ -252,7 +254,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:203
 msgid "Top-level default tasks"
-msgstr ""
+msgstr "顶层的默认任务"
 
 #: ../usage/tasks.rst:205
 msgid ""
@@ -265,7 +267,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:214
 msgid "``Task`` subclasses"
-msgstr ""
+msgstr "``Task`` 子类"
 
 #: ../usage/tasks.rst:216
 msgid ""
@@ -277,11 +279,11 @@ msgstr ""
 
 #: ../usage/tasks.rst:221
 msgid "For example, this new-style task::"
-msgstr ""
+msgstr "例如，新式任务会像这样： ::"
 
 #: ../usage/tasks.rst:231
 msgid "is exactly equivalent to this function-based task::"
-msgstr ""
+msgstr "和下面这个基于函数的任务作用完全一致： ::"
 
 #: ../usage/tasks.rst:238
 msgid ""
@@ -300,7 +302,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:249
 msgid "Using custom subclasses with ``@task``"
-msgstr ""
+msgstr "使用 ``@task`` 定制子类"
 
 #: ../usage/tasks.rst:251
 msgid ""
@@ -345,7 +347,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:295
 msgid "Namespaces"
-msgstr ""
+msgstr "命名空间（Namespace）"
 
 #: ../usage/tasks.rst:297
 msgid ""
@@ -383,7 +385,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:314
 msgid "Basic"
-msgstr ""
+msgstr "基础"
 
 #: ../usage/tasks.rst:316
 msgid ""
@@ -393,7 +395,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:327
 msgid "The output of ``fab --list`` would look something like this::"
-msgstr ""
+msgstr "``fab --list`` 的输出会像这样： ::"
 
 #: ../usage/tasks.rst:332
 msgid ""
@@ -404,7 +406,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:337
 msgid "Importing a submodule"
-msgstr ""
+msgstr "引用子目录"
 
 #: ../usage/tasks.rst:339
 msgid ""
@@ -417,11 +419,11 @@ msgstr ""
 
 #: ../usage/tasks.rst:348
 msgid "And we'll add this to the top of ``__init__.py``::"
-msgstr ""
+msgstr "我们再在 ``__init__.py`` 的顶部加上： ::"
 
 #: ../usage/tasks.rst:352
 msgid "Now ``fab --list`` shows us::"
-msgstr ""
+msgstr "现在 ``fab --list`` 会显示： ::"
 
 #: ../usage/tasks.rst:358
 msgid ""
@@ -431,7 +433,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:362
 msgid "Going deeper"
-msgstr ""
+msgstr "深入了解"
 
 #: ../usage/tasks.rst:364
 msgid ""
@@ -455,11 +457,11 @@ msgstr ""
 
 #: ../usage/tasks.rst:388
 msgid "After all that, our file tree looks like this::"
-msgstr ""
+msgstr "这样之后文件的树形结构会变成这样： ::"
 
 #: ../usage/tasks.rst:397
 msgid "and ``fab --list`` shows::"
-msgstr ""
+msgstr "``fab --list`` 会显示： ::"
 
 #: ../usage/tasks.rst:405
 msgid ""
@@ -470,7 +472,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:410
 msgid "Limiting with ``__all__``"
-msgstr ""
+msgstr "使用 ``__all__`` 加以限制"
 
 #: ../usage/tasks.rst:412
 msgid ""
@@ -490,7 +492,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:423
 msgid "Switching it up"
-msgstr ""
+msgstr "封装"
 
 #: ../usage/tasks.rst:425
 msgid ""
@@ -499,16 +501,18 @@ msgid ""
 "here. All Fabric's loader cares about is the names the modules are given "
 "when they're imported."
 msgstr ""
+"我们已经将 fabfile 库嵌套组织起来并直接引用，但是重要的并不是文件系统层级结构，"
+"Fabric 的加载器只关心模块名和引用的时机。"
 
 #: ../usage/tasks.rst:430
 msgid ""
 "For example, if we changed the top of our root ``__init__.py`` to look like "
 "this::"
-msgstr ""
+msgstr "例如，如果我们修改最顶层的 ``__init__.py`` 成这样： ::"
 
 #: ../usage/tasks.rst:435
 msgid "Our task list would change thusly::"
-msgstr ""
+msgstr "任务列表会因此改变： ::"
 
 #: ../usage/tasks.rst:443
 msgid ""
@@ -519,7 +523,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:448
 msgid "Nested list output"
-msgstr ""
+msgstr "嵌套的列表输出"
 
 #: ../usage/tasks.rst:450
 msgid ""
@@ -537,7 +541,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:474
 msgid "Classic tasks"
-msgstr ""
+msgstr "传统任务"
 
 #: ../usage/tasks.rst:476
 msgid ""
@@ -561,7 +565,7 @@ msgstr ""
 
 #: ../usage/tasks.rst:487
 msgid "Imports"
-msgstr ""
+msgstr "导入"
 
 #: ../usage/tasks.rst:489
 msgid ""
@@ -589,13 +593,15 @@ msgstr ""
 msgid ""
 "For example, here's a sample fabfile which uses ``urllib.urlopen`` to get "
 "some data out of a webservice::"
-msgstr ""
+msgstr "下面是一个使用 ``urllib.urlopen`` 从网络服务下载数据的 fabfile 的例子。"
 
 #: ../usage/tasks.rst:515
 msgid ""
 "This looks simple enough, and will run without error. However, look what "
 "happens if we run :option:`fab --list <-l>` on this fabfile::"
 msgstr ""
+"看起来这已经足够简单，并且没有错误。然而，如果在这个 fabfile 上运行 "
+":option:`fab --list <-l>` 就会这样： ::"
 
 #: ../usage/tasks.rst:524
 msgid ""
@@ -608,10 +614,10 @@ msgstr ""
 
 #: ../usage/tasks.rst:530
 msgid "For reference, here's the recommended way to do it::"
-msgstr ""
+msgstr "作为参考，下面是推荐的使用方法： ::"
 
 #: ../usage/tasks.rst:540
 msgid ""
 "It's a simple change, but it'll make anyone using your fabfile a bit "
 "happier."
-msgstr ""
+msgstr "这只是一个很小的变化，但能大幅改善 fabfile 的使用体验。"
